@@ -1,1 +1,3 @@
-# Doc_Stats_AI
+# Docs Sats ai Frontend
+
+docstatsai.by
