@@ -1,0 +1,91 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  /* primary */
+  --primary-100: #2752e7;
+  --primary-80: #5275ec;
+  --primary-60: #7d97f1;
+  --primary-40: #d0d8ff;
+  --primary-20: #f5f8fe;
+
+  /* base */
+  --base-100: #2c3131;
+  --base-80: #626262;
+  --base-60: #a9a9a9;
+  --base-40: #cacaca;
+  --base-20: #e3e3e3;
+  --base-0: #ffffff;
+
+  /* success */
+  --success-100: #53d258;
+  --success-80: #75db79;
+  --success-60: #98e49b;
+  --success-40: #baebc0;
+  --success-20: #ddf6de;
+
+  /* error */
+  --error-100: #e25c5c;
+  --error-80: #eb7d7d;
+  --error-60: #ee999d;
+  --error-40: #f3bebe;
+  --error-20: #f9dede;
+
+  /* ui */
+  --background: var(--base-100);
+  --surface: var(--base-100);
+  --surface-variant: var(--base-80);
+  --text-primary: var(--base-100);
+  --text-secondary: var(--base-80);
+  --icon-color: var(--base-80);
+  --icon-color-hover: var(--base-100);
+  --icon-color-active: var(--base-60);
+
+  /* Sizes */
+  --br-lg: 16px;
+  --br-md: 12px;
+  --br-sm: 6px;
+  --br-xsm: 2px;
+
+  --padding-xxl: 48px;
+  --padding-xl: 32px;
+  --padding-lg: 24px;
+  --padding-md: 16px;
+  --padding-sm: 12px;
+  --padding-xs: 8px;
+  --padding-xxs: 4px;
+}
+
+/* ---------- DARK THEME ---------- */
+[data-theme='dark'] {
+
+  /* primary (lightened for dark bg) */
+  --primary-100: #f5f8fe;
+  --primary-80: #d0d8ff;
+  --primary-60: #7d97f1;
+  --primary-40: #5275ec;
+  --primary-20: #2752e7;
+
+  /* base */
+  --base-100: #ffffff;
+  --base-80: #e3e3e3;
+  --base-60: #cacaca;
+  --base-40: #a9a9a9;
+  --base-20: #626262;
+  --base-0: #2c3131;
+  --base: #222424;
+
+  /* success */
+  --success-100: #7bef80;
+  --success-80: #9af5a0;
+  --success-60: #b8f8bd;
+  --success-40: #d6fbe0;
+  --success-20: #ecfff0;
+
+  /* error */
+  --error-100: #ff7a7a;
+  --error-80: #ff9a9a;
+  --error-60: #ffb8b8;
+  --error-40: #ffdada;
+  --error-20: #fff0f0;
+}
