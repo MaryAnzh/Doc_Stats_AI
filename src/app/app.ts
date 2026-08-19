@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { THEMES, type ThemeType } from './shared';
+import { THEMES, DATA_ATTRIBUTE_THEME, type ThemeType } from './shared';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +14,19 @@ export class App {
 
   theme = signal<ThemeType>(THEMES.DARK);
 
+  applyTheme(theme: ThemeType) {
+    const root = this.document.documentElement;
+
+    if (theme === THEMES.DARK) {
+      root.setAttribute(DATA_ATTRIBUTE_THEME, THEMES.DARK);
+    } else {
+      root.removeAttribute(DATA_ATTRIBUTE_THEME);
+    }
+  }
+
+  toggleTheme = () => {
+    const next = this.theme() === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
+    this.theme.set(next);
+    this.applyTheme(next);
+  };
 }
