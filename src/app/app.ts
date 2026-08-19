@@ -1,6 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { THEMES, type ThemeType } from './shared';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -9,4 +11,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('Docs Stats AI');
+
+  theme = signal<ThemeType>(THEMES.DARK);
+
 }
