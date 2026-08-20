@@ -1,0 +1,11 @@
+<h2 class="header_logo">
+  header
+</h2>
+<div class="themes_wrap">
+  <button
+    (click)="handleTheme()"
+    [disabled]="theme() === lightTheme"></button>
+  <button
+    (click)="handleTheme()"
+    [disabled]="theme() === darkTheme"></button>
+</div>
