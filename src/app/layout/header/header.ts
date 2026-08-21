@@ -9,11 +9,12 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import type { ThemeType } from '../../shared';
 import { THEMES } from '../../shared';
+import { Logo } from "../../shared/ui";
 const { LIGHT, DARK } = THEMES;
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [Logo],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
