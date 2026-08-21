@@ -14,21 +14,22 @@
   }
 
   .logo-text {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    letter-spacing: 0.5px;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
     gap: 4px;
 
     .ds {
       color: var(--base-90);
+      font-weight: 300;
+      font-size: 24px;
+      letter-spacing: 0.5px;
     }
 
     .ai {
       color: var(--accent-80);
-
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 0.5px;
     }
 
     .ds_desktop {
