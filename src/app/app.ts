@@ -1,23 +1,25 @@
-import { Component, DOCUMENT, inject, signal } from '@angular/core';
+import { Component, DOCUMENT, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { THEMES, DATA_ATTRIBUTE_THEME, type ThemeType } from './shared';
-import { Header } from "./layout/header/header";
+import { HeaderComponent } from './layout/header/header';
 
 const { DARK, LIGHT } = THEMES;
 
 @Component({
   selector: 'app-root',
-  imports: [Header, RouterOutlet],
+  imports: [HeaderComponent, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './app.scss',
 })
-export class App {
+export class AppComponent {
   private document = inject(DOCUMENT);
 
   protected readonly title = signal('Docs Stats AI');
 
-  public theme = signal<ThemeType>(DARK);
+  public readonly theme = signal<ThemeType>(DARK);
+
   constructor() {
     this.applyTheme(this.theme());
   }

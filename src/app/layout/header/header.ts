@@ -1,28 +1,24 @@
-import {
-  Component,
-  input,
-  inject,
-  computed,
-  output
-} from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, input, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import type { ThemeType } from '../../shared';
 import { THEMES } from '../../shared';
-import { Logo } from "../../shared/ui";
+import { LogoComponent } from '../../shared/ui';
 const { LIGHT, DARK } = THEMES;
 
 @Component({
   selector: 'app-header',
-  imports: [Logo],
+  imports: [LogoComponent],
   templateUrl: './header.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header.scss',
 })
-export class Header {
+export class HeaderComponent {
   private router = inject(Router);
 
-  theme = input<ThemeType>();
-  toggleTheme = input<() => void>();
+  readonly theme = input<ThemeType>();
+  readonly toggleTheme = input<() => void>();
+
   lightTheme = LIGHT;
   darkTheme = DARK;
 
