@@ -2,10 +2,6 @@
   <app-logo />
 </div>
 <div class="themes_wrap">
-  <button
-    (click)="handleTheme()"
-    [disabled]="theme() === lightTheme"></button>
-  <button
-    (click)="handleTheme()"
-    [disabled]="theme() === darkTheme"></button>
+  <button (click)="handleTheme()" [disabled]="theme() === lightTheme"></button>
+  <button (click)="handleTheme()" [disabled]="theme() === darkTheme"></button>
 </div>
