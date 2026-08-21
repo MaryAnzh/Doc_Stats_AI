@@ -211,7 +211,6 @@ template {
 }
 
 .scroll-hidden {
-
   &,
   [data-scroll-hidden='true'] {
     overflow: hidden;
