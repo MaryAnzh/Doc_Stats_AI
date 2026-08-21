@@ -19,6 +19,10 @@
   --base-10: #eeee;
   --base-0: #ffffff;
 
+  --accent-100: #2752e7;
+  --accent-80: #5275ec;
+  --accent-60: #7d97f1;
+
   /* success */
   --success-100: #53d258;
   --success-80: #75db79;
@@ -60,13 +64,6 @@
 
 /* ---------- DARK THEME ---------- */
 [data-theme='dark'] {
-
-  /* primary (lightened for dark bg) */
-  --primary-100: #f5f8fe;
-  --primary-80: #d0d8ff;
-  --primary-60: #7d97f1;
-  --primary-40: #5275ec;
-  --primary-20: #2752e7;
 
   /* base */
   --base-100: #ffffff;

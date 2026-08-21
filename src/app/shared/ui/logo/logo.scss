@@ -1,0 +1,50 @@
+@use '../../../../styles/common.scss' as *;
+
+:host {
+  .logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .logo-img {
+    width: 48px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+
+    .ds {
+      color: var(--base-90);
+    }
+
+    .ai {
+      color: var(--accent-80);
+
+    }
+
+    .ds_desktop {
+      display: none;
+
+      @media (min-width: $min-tablet) {
+        display: flex;
+      }
+    }
+
+    .ds_mobile {
+      display: flex;
+
+      @media (min-width: $min-tablet) {
+        display: none;
+      }
+    }
+  }
+}
