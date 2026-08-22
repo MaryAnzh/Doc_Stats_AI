@@ -1,8 +1,13 @@
 import type { Preview } from '@storybook/angular-vite';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import docJson from '../documentation.json';
-setCompodocJson(docJson);
 import '../src/styles.scss';
+
+setCompodocJson(docJson);
+
+const LIGHT = 'light';
+const DARK = 'dark';
+const DATA_THEME = 'data-theme';
 
 const preview: Preview = {
   parameters: {
@@ -12,14 +17,55 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    backgrounds: {
+      default: LIGHT,
+      values: [
+        { name: LIGHT, value: '#ffffff' },
+        { name: DARK, value: '#1e1e1e' },
+      ],
+    },
+    viewport: {
+      viewports: {
+        mobile: { name: 'Mobile', styles: { width: '375px', height: '640px' } },
+        tablet: { name: 'Tablet', styles: { width: '768px', height: '1024px' } },
+        laptop: { name: 'Laptop', styles: { width: '1024px', height: '860px' } },
+        desktop: { name: 'Desktop', styles: { width: '1280px', height: '800px' } },
+      },
+    },
+    docs: {
+      description: {
+        component: 'UI‑Kit DocStatsAI — глобальные настройки Storybook',
+      },
+    },
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
       test: 'todo',
     },
   },
+
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      defaultValue: LIGHT,
+      toolbar: {
+        items: [LIGHT, DARK],
+      },
+    },
+  },
+
+  decorators: [
+    (storyFn, context) => {
+      const theme = context.globals.theme;
+
+      if (theme === DARK) {
+        document.documentElement.setAttribute(DATA_THEME, DARK);
+      } else {
+        document.documentElement.removeAttribute(DATA_THEME);
+      }
+
+      return storyFn();
+    },
+  ],
 };
 
 export default preview;

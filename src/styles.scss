@@ -26,6 +26,12 @@ body {
   font-family: $font-main;
 }
 
+.sb-wrapper {
+  padding: 24px;
+  background: var(--background);
+  font-family: $font-main;
+}
+
 /**
 ::-webkit-scrollbar {
   width: 0;
