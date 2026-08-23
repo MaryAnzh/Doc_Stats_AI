@@ -11,20 +11,8 @@ const DATA_THEME = 'data-theme';
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
+    controls: { expanded: true },
     actions: { argTypesRegex: '^on[A-Z].*' },
-    backgrounds: {
-      default: LIGHT,
-      values: [
-        { name: LIGHT, value: '#ffffff' },
-        { name: DARK, value: '#1e1e1e' },
-      ],
-    },
     viewport: {
       viewports: {
         mobile: { name: 'Mobile', styles: { width: '375px', height: '640px' } },

@@ -7,6 +7,17 @@
     gap: 10px;
   }
 
+  .logo--small {
+    .logo-img {
+      width: 32px;
+    }
+
+    .logo-text .ds,
+    .logo-text .ai {
+      font-size: 18px;
+    }
+  }
+
   .logo-img {
     width: 48px;
     height: auto;
