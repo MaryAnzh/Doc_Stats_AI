@@ -78,6 +78,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,html}": [
+      "npm run tsc",
       "eslint --fix",
       "prettier --write"
     ],

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, input } from '@angular/core';
-import { LogoSize } from '../../models/props';
+import { LogoSize } from '../../models';
 import { COMPONENTS_SIZE } from '../../constants';
 
 const { DEFAULT, SM } = COMPONENTS_SIZE;
@@ -14,5 +14,6 @@ const { DEFAULT, SM } = COMPONENTS_SIZE;
 export class LogoComponent {
   readonly showText = input<boolean>(true);
   readonly size = input<LogoSize>(DEFAULT);
+
   logoSizeClass = this.size() === SM ? 'logo logo--small' : 'logo';
 }
