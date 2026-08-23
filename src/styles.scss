@@ -1,7 +1,7 @@
-@use 'styles/common.scss' as *;
 @use 'styles/app-theme.scss' as *;
 @use 'styles//fonts.scss' as *;
 @use 'styles/normalize.css' as *;
+@use 'styles/variables' as *;
 
 *,
 *::before,
@@ -23,6 +23,12 @@ body {
   color: var(--base-100);
   font-size: 1rem;
   line-height: 1.5;
+  font-family: $font-main;
+}
+
+.sb-wrapper {
+  padding: 24px;
+  background: var(--background);
   font-family: $font-main;
 }
 

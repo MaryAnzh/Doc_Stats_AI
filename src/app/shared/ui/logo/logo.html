@@ -1,8 +1,10 @@
-<div class="logo">
+<div [class]="logoSizeClass">
   <img src="/assets/logo.webp" alt="DS AI Logo" class="logo-img" />
-  <span class="logo-text">
-    <span class="ds ds_desktop">Document Statistics</span>
-    <span class="ds ds_mobile">DS</span>
-    <span class="ai">AI</span>
-  </span>
+  @if (showText()) {
+    <span class="logo-text">
+      <span class="ds ds_desktop">Document Statistics</span>
+      <span class="ds ds_mobile">DS</span>
+      <span class="ai">AI</span>
+    </span>
+  }
 </div>
