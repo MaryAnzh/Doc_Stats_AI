@@ -23,12 +23,12 @@ export const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'not-found',
-  //   loadComponent: () => import('./not-found/not-found').then((c) => c.NotFound),
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: 'not-found',
-  // },
+  {
+    path: 'not-found',
+    loadComponent: () => import('./not-found/not-found').then((c) => c.NotFoundPage),
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+  },
 ];
