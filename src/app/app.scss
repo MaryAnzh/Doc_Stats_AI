@@ -8,7 +8,7 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: max-content auto min-content;
+    grid-template-rows: max-content 0 auto min-content;
     justify-content: center;
     gap: var(--padding-md);
 

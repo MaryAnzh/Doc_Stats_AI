@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/angular-vite';
 import { LogoComponent } from './logo';
-import { COMPONENTS_SIZE } from '../../constants';
-const { DEFAULT, SM } = COMPONENTS_SIZE;
+import { COMPONENTS_SIZE, DEFAULT_SIZE as DEFAULT } from '../../constants';
+const { SM } = COMPONENTS_SIZE;
 
 const meta: Meta<LogoComponent> = {
   title: 'UI/Logo',

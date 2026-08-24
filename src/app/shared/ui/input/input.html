@@ -1,11 +1,29 @@
 <div class="input-wrapper" [class]="sizeClass()">
-  <input
-    class="input-field"
-    [placeholder]="placeholder()"
-    [disabled]="disabled()"
-    [value]="value()"
-    (input)="onChangeValue($event.target.value)"
-  />
+  @if (label()) {
+    <label class="input-label">{{ label() }}</label>
+  }
+
+  <div class="input-container">
+    @if (iconLeft()) {
+      <span class="input-icon left">
+        <i class="bi" [class]="'bi-' + iconLeft()"></i>
+      </span>
+    }
+
+    <input
+      class="input-field"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [value]="value()"
+      (input)="onChangeValue($event.target.value)"
+    />
+
+    @if (iconRight()) {
+      <span class="input-icon right">
+        <i class="bi" [class]="'bi-' + iconRight()"></i>
+      </span>
+    }
+  </div>
 
   @if (error()) {
     <div class="input-error">{{ error() }}</div>

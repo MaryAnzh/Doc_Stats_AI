@@ -1,10 +1,19 @@
-@use '../../../../styles/variables' as *;
-
 :host {
   .input-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+  }
+
+  .input-label {
+    font-size: 14px;
+    color: var(--base-90);
+  }
+
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .input-field {
@@ -26,23 +35,62 @@
     }
   }
 
+  .input-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--base-80);
+
+    &.left {
+      left: 10px;
+    }
+
+    &.right {
+      right: 10px;
+    }
+  }
+
   /* Sizes */
   .input--sm .input-field {
     padding: 4px 8px;
+    padding-left: 32px;
+    padding-right: 32px;
     font-size: 14px;
+  }
+
+  .input--sm .input-icon {
+    i {
+      font-size: 12px;
+    }
   }
 
   .input--md .input-field {
     padding: 6px 10px;
+    padding-left: 36px;
+    padding-right: 36px;
     font-size: 16px;
+  }
+
+  .input--md .input-icon {
+    i {
+      font-size: 14px;
+    }
   }
 
   .input--lg .input-field {
     padding: 10px 14px;
+    padding-left: 40px;
+    padding-right: 40px;
     font-size: 18px;
   }
 
-  /* Error */
+  .input--lg .input-icon {
+    i {
+      font-size: 16px;
+    }
+  }
+
   .input-error {
     color: var(--error-80);
     font-size: 13px;

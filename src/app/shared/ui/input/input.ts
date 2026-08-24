@@ -11,9 +11,15 @@ import { LG, MD, SM } from '../../constants';
 export class InputComponent {
   readonly value = model<string>('');
   readonly placeholder = input<string>('');
+  readonly label = input<string | null>(null);
   readonly error = input<string | null>(null);
+
+  readonly iconLeft = input<string | null>(null);
+  readonly iconRight = input<string | null>(null);
+
   readonly size = input<InputSize>(MD);
   readonly disabled = input<boolean>(false);
+
   sizeClassChart = {
     [SM]: 'input--sm',
     [MD]: 'input--md',
