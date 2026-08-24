@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, computed } from '@angular/core';
 import { LogoSize } from '../../models';
-import { COMPONENTS_SIZE } from '../../constants';
+import { COMPONENTS_SIZE, DEFAULT_SIZE } from '../../constants';
 
-const { DEFAULT, SM } = COMPONENTS_SIZE;
+const { SM } = COMPONENTS_SIZE;
 
 @Component({
   selector: 'app-logo',
@@ -13,7 +13,7 @@ const { DEFAULT, SM } = COMPONENTS_SIZE;
 })
 export class LogoComponent {
   readonly showText = input<boolean>(true);
-  readonly size = input<LogoSize>(DEFAULT);
+  readonly size = input<LogoSize>(DEFAULT_SIZE);
 
-  logoSizeClass = this.size() === SM ? 'logo logo--small' : 'logo';
+  readonly logoSizeClass = computed(() => (this.size() === SM ? 'logo logo--small' : 'logo'));
 }

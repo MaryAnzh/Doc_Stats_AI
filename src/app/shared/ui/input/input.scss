@@ -1,0 +1,50 @@
+@use '../../../../styles/variables' as *;
+
+:host {
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .input-field {
+    width: 100%;
+    border: 1px solid var(--base-40);
+    background: var(--base-10);
+    color: var(--base-100);
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: var(--accent-80);
+      outline: none;
+    }
+
+    &:disabled {
+      background: var(--base-20);
+      cursor: not-allowed;
+    }
+  }
+
+  /* Sizes */
+  .input--sm .input-field {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .input--md .input-field {
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+
+  .input--lg .input-field {
+    padding: 10px 14px;
+    font-size: 18px;
+  }
+
+  /* Error */
+  .input-error {
+    color: var(--error-80);
+    font-size: 13px;
+  }
+}

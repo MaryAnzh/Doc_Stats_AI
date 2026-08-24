@@ -1,0 +1,13 @@
+<div class="input-wrapper" [class]="sizeClass()">
+  <input
+    class="input-field"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [value]="value()"
+    (input)="onChangeValue($event.target.value)"
+  />
+
+  @if (error()) {
+    <div class="input-error">{{ error() }}</div>
+  }
+</div>
