@@ -12,8 +12,9 @@
     "prepare": "husky",
     "lint": "eslint \"src/**/*.{ts,html}\"",
     "format": "prettier --write",
-    "storybook": "ng run docstatsai-frontend:storybook",
-    "build-storybook": "ng run docstatsai-frontend:build-storybook"
+    "sb": "ng run docstatsai-frontend:storybook",
+    "build-sb": "ng run docstatsai-frontend:build-storybook",
+    "deploy-sb": "gh-pages -d storybook-static"
   },
   "prettier": {
     "printWidth": 100,
@@ -64,6 +65,7 @@
     "@vitest/coverage-v8": "4.1.10",
     "eslint": "^10.9.0",
     "eslint-plugin-storybook": "^10.5.10",
+    "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
     "jsdom": "^27.1.0",
     "lint-staged": "^17.3.0",

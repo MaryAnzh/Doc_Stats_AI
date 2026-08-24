@@ -22,6 +22,11 @@ const config: StorybookConfig = {
         "."
       ]
     }
-  }
+  },
+  core: {},
+  viteFinal: async (config) => {
+    config.base = '/Doc_Stats_AI/';
+    return config;
+  },
 };
 export default config;

@@ -1,90 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-<g id="Layer_1">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#2752E7;}
+	.st2{fill:#0F3AB5;}
+	.st3{fill:#020307;}
+</style>
+<g>
 	<g>
-		<rect x="0.5" y="0.5" fill="#FFFFFF" width="9" height="11"/>
-		<path fill="#2752E7" d="M9,1v10H1V1H9 M10,0H0v12h10V0L10,0z"/>
-	</g>
-	<g>
-		<rect x="6.5" y="4.5" fill="#2752E7" width="9" height="11"/>
-		<path fill="#0F3AB5" d="M15,5v10H7V5H15 M16,4H6v12h10V4L16,4z"/>
-	</g>
-</g>
-<g id="Layer_3">
-	<g>
-		<rect x="9" y="7" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="9" y="8" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="8" y="8" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="8" y="9" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="9" y="9" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="9" y="10" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="10" y="10" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="11" y="10" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="12" y="10" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="12" y="11" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="13" y="11" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="13" y="12" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="12" y="12" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="12" y="13" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="11" y="13" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="10" y="13" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="9" y="13" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="9" y="12" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="8" y="12" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="10" y="7" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="11" y="7" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="12" y="7" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="12" y="8" fill="#FFFFFF" width="1" height="1"/>
-		<rect x="13" y="8" fill="#FFFFFF" width="1" height="1"/>
+		<rect x="0.5" y="0.5" class="st0" width="9" height="11"/>
+		<path class="st1" d="M9,1v10H1V1H9 M10,0H0v12h10V0L10,0z"/>
 	</g>
 </g>
 <g id="Layer_2">
 	<g>
-		<rect x="2" y="2" fill="#020307" width="1" height="1"/>
-		<rect x="3" y="2" fill="#020307" width="1" height="1"/>
-		<rect x="4" y="2" fill="#020307" width="1" height="1"/>
-		<rect x="5" y="2" fill="#020307" width="1" height="1"/>
-		<rect x="5" y="3" fill="#020307" width="1" height="1"/>
-		<rect x="6" y="3" fill="#020307" width="1" height="1"/>
-		<rect x="6" y="4" fill="#020307" width="1" height="1"/>
-		<rect x="6" y="5" fill="#020307" width="1" height="1"/>
-		<rect x="6" y="6" fill="#020307" width="1" height="1"/>
-		<rect x="6" y="7" fill="#020307" width="1" height="1"/>
-		<rect x="5" y="7" fill="#020307" width="1" height="1"/>
-		<rect x="5" y="8" fill="#020307" width="1" height="1"/>
-		<rect x="4" y="8" fill="#020307" width="1" height="1"/>
-		<rect x="3" y="8" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="8" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="7" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="6" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="5" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="4" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="3" fill="#020307" width="1" height="1"/>
-		<rect x="2" y="2" fill="#020307" width="1" height="1"/>
+		<polygon class="st1" points="8,6 7,6 7,7 8,7 		"/>
+		<polygon class="st1" points="8,7 7,7 7,8 8,8 		"/>
+		<polygon class="st1" points="8,8 7,8 7,9 8,9 		"/>
+		<polygon class="st1" points="8,9 7,9 7,10 8,10 		"/>
+		<polygon class="st1" points="8,10 7,10 7,11 8,11 		"/>
+		<polygon class="st1" points="8,11 7,11 7,12 8,12 		"/>
+		<polygon class="st1" points="8,12 7,12 7,13 8,13 		"/>
+		<polygon class="st1" points="8,13 7,13 7,14 8,14 		"/>
+		<polygon class="st1" points="8,14 7,14 7,15 8,15 		"/>
+		<polygon class="st1" points="11,5 10,5 10,6 11,6 		"/>
+		<polygon class="st1" points="12,5 11,5 11,6 12,6 		"/>
+		<polygon class="st1" points="13,5 12,5 12,6 13,6 		"/>
+		<polygon class="st1" points="14,5 13,5 13,6 14,6 		"/>
+		<polygon class="st1" points="15,5 14,5 14,6 15,6 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,6 8,6 8,7 9,7 		"/>
+		<polygon class="st1" points="9,5 8,5 8,6 9,6 		"/>
+		<polygon class="st1" points="10,6 9,6 9,7 10,7 		"/>
+		<polygon class="st1" points="11,6 10,6 10,7 11,7 		"/>
+		<polygon class="st1" points="12,6 11,6 11,7 12,7 		"/>
+		<polygon class="st1" points="13,6 12,6 12,7 13,7 		"/>
+		<polygon class="st1" points="14,6 13,6 13,7 14,7 		"/>
+		<polygon class="st1" points="15,6 14,6 14,7 15,7 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,7 8,7 8,8 9,8 		"/>
+		<polygon class="st1" points="10,7 9,7 9,8 10,8 		"/>
+		<polygon class="st1" points="11,7 10,7 10,8 11,8 		"/>
+		<polygon class="st1" points="12,7 11,7 11,8 12,8 		"/>
+		<polygon class="st1" points="13,7 12,7 12,8 13,8 		"/>
+		<polygon class="st1" points="14,7 13,7 13,8 14,8 		"/>
+		<polygon class="st1" points="15,7 14,7 14,8 15,8 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,8 8,8 8,9 9,9 		"/>
+		<polygon class="st1" points="10,8 9,8 9,9 10,9 		"/>
+		<polygon class="st1" points="11,8 10,8 10,9 11,9 		"/>
+		<polygon class="st1" points="12,8 11,8 11,9 12,9 		"/>
+		<polygon class="st1" points="13,8 12,8 12,9 13,9 		"/>
+		<polygon class="st1" points="14,8 13,8 13,9 14,9 		"/>
+		<polygon class="st1" points="15,8 14,8 14,9 15,9 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,9 8,9 8,10 9,10 		"/>
+		<polygon class="st1" points="10,9 9,9 9,10 10,10 		"/>
+		<polygon class="st1" points="11,9 10,9 10,10 11,10 		"/>
+		<polygon class="st1" points="12,9 11,9 11,10 12,10 		"/>
+		<polygon class="st1" points="13,9 12,9 12,10 13,10 		"/>
+		<polygon class="st1" points="14,9 13,9 13,10 14,10 		"/>
+		<polygon class="st1" points="15,9 14,9 14,10 15,10 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,10 8,10 8,11 9,11 		"/>
+		<polygon class="st1" points="10,10 9,10 9,11 10,11 		"/>
+		<polygon class="st1" points="11,10 10,10 10,11 11,11 		"/>
+		<polygon class="st1" points="12,10 11,10 11,11 12,11 		"/>
+		<polygon class="st1" points="13,10 12,10 12,11 13,11 		"/>
+		<polygon class="st1" points="14,10 13,10 13,11 14,11 		"/>
+		<polygon class="st1" points="15,10 14,10 14,11 15,11 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,11 8,11 8,12 9,12 		"/>
+		<polygon class="st1" points="10,11 9,11 9,12 10,12 		"/>
+		<polygon class="st1" points="11,11 10,11 10,12 11,12 		"/>
+		<polygon class="st1" points="12,11 11,11 11,12 12,12 		"/>
+		<polygon class="st1" points="13,11 12,11 12,12 13,12 		"/>
+		<polygon class="st1" points="14,11 13,11 13,12 14,12 		"/>
+		<polygon class="st1" points="15,11 14,11 14,12 15,12 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,12 8,12 8,13 9,13 		"/>
+		<polygon class="st1" points="10,12 9,12 9,13 10,13 		"/>
+		<polygon class="st1" points="11,12 10,12 10,13 11,13 		"/>
+		<polygon class="st1" points="12,12 11,12 11,13 12,13 		"/>
+		<polygon class="st1" points="13,12 12,12 12,13 13,13 		"/>
+		<polygon class="st1" points="14,12 13,12 13,13 14,13 		"/>
+		<polygon class="st1" points="15,12 14,12 14,13 15,13 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,13 8,13 8,14 9,14 		"/>
+		<polygon class="st1" points="10,13 9,13 9,14 10,14 		"/>
+		<polygon class="st1" points="11,13 10,13 10,14 11,14 		"/>
+		<polygon class="st1" points="12,13 11,13 11,14 12,14 		"/>
+		<polygon class="st1" points="13,13 12,13 12,14 13,14 		"/>
+		<polygon class="st1" points="14,13 13,13 13,14 14,14 		"/>
+		<polygon class="st1" points="15,13 14,13 14,14 15,14 		"/>
+	</g>
+	<g>
+		<polygon class="st1" points="9,14 8,14 8,15 9,15 		"/>
+		<polygon class="st1" points="10,14 9,14 9,15 10,15 		"/>
+		<polygon class="st1" points="11,14 10,14 10,15 11,15 		"/>
+		<polygon class="st1" points="12,14 11,14 11,15 12,15 		"/>
+		<polygon class="st1" points="13,14 12,14 12,15 13,15 		"/>
+		<polygon class="st1" points="14,14 13,14 13,15 14,15 		"/>
+		<polygon class="st1" points="15,14 14,14 14,15 15,15 		"/>
+	</g>
+	<g>
+		<polygon class="st2" points="15,4 14,4 14,5 15,5 		"/>
+		<polygon class="st2" points="16,4 15,4 15,5 16,5 		"/>
+		<polygon class="st2" points="14,4 13,4 13,5 14,5 		"/>
+		<polygon class="st2" points="13,4 12,4 12,5 13,5 		"/>
+		<polygon class="st2" points="12,4 11,4 11,5 12,5 		"/>
+		<polygon class="st2" points="11,4 10,4 10,5 11,5 		"/>
+		<polygon class="st2" points="10,4 9,4 9,5 10,5 		"/>
+		<polygon class="st2" points="7,8 6,8 6,9 7,9 		"/>
+		<polygon class="st2" points="7,9 6,9 6,10 7,10 		"/>
+		<polygon class="st2" points="7,10 6,10 6,11 7,11 		"/>
+		<polygon class="st2" points="7,11 6,11 6,12 7,12 		"/>
+		<polygon class="st2" points="7,12 6,12 6,13 7,13 		"/>
+		<polygon class="st2" points="7,13 6,13 6,14 7,14 		"/>
+		<polygon class="st2" points="7,14 6,14 6,15 7,15 		"/>
+		<polygon class="st2" points="7,15 6,15 6,16 7,16 		"/>
+		<polygon class="st2" points="8,15 7,15 7,16 8,16 		"/>
+		<polygon class="st2" points="9,15 8,15 8,16 9,16 		"/>
+		<polygon class="st2" points="10,15 9,15 9,16 10,16 		"/>
+		<polygon class="st2" points="11,15 10,15 10,16 11,16 		"/>
+		<polygon class="st2" points="12,15 11,15 11,16 12,16 		"/>
+		<polygon class="st2" points="13,15 12,15 12,16 13,16 		"/>
+		<polygon class="st2" points="14,15 13,15 13,16 14,16 		"/>
+		<polygon class="st2" points="15,15 14,15 14,16 15,16 		"/>
+		<polygon class="st2" points="16,15 15,15 15,16 16,16 		"/>
+		<polygon class="st2" points="16,14 15,14 15,15 16,15 		"/>
+		<polygon class="st2" points="16,13 15,13 15,14 16,14 		"/>
+		<polygon class="st2" points="16,12 15,12 15,13 16,13 		"/>
+		<polygon class="st2" points="16,11 15,11 15,12 16,12 		"/>
+		<polygon class="st2" points="16,10 15,10 15,11 16,11 		"/>
+		<polygon class="st2" points="16,9 15,9 15,10 16,10 		"/>
+		<polygon class="st2" points="16,8 15,8 15,9 16,9 		"/>
+		<polygon class="st2" points="16,7 15,7 15,8 16,8 		"/>
+		<polygon class="st2" points="16,6 15,6 15,7 16,7 		"/>
+		<polygon class="st2" points="16,5 15,5 15,6 16,6 		"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<g>
+		<rect x="9" y="7" class="st0" width="1" height="1"/>
+		<rect x="9" y="8" class="st0" width="1" height="1"/>
+		<rect x="8" y="8" class="st0" width="1" height="1"/>
+		<rect x="8" y="9" class="st0" width="1" height="1"/>
+		<rect x="9" y="9" class="st0" width="1" height="1"/>
+		<rect x="9" y="10" class="st0" width="1" height="1"/>
+		<rect x="10" y="10" class="st0" width="1" height="1"/>
+		<rect x="11" y="10" class="st0" width="1" height="1"/>
+		<rect x="12" y="10" class="st0" width="1" height="1"/>
+		<rect x="12" y="11" class="st0" width="1" height="1"/>
+		<rect x="13" y="11" class="st0" width="1" height="1"/>
+		<rect x="13" y="12" class="st0" width="1" height="1"/>
+		<rect x="12" y="12" class="st0" width="1" height="1"/>
+		<rect x="12" y="13" class="st0" width="1" height="1"/>
+		<rect x="11" y="13" class="st0" width="1" height="1"/>
+		<rect x="10" y="13" class="st0" width="1" height="1"/>
+		<rect x="9" y="13" class="st0" width="1" height="1"/>
+		<rect x="9" y="12" class="st0" width="1" height="1"/>
+		<rect x="8" y="12" class="st0" width="1" height="1"/>
+		<rect x="10" y="7" class="st0" width="1" height="1"/>
+		<rect x="11" y="7" class="st0" width="1" height="1"/>
+		<rect x="12" y="7" class="st0" width="1" height="1"/>
+		<rect x="12" y="8" class="st0" width="1" height="1"/>
+		<rect x="13" y="8" class="st0" width="1" height="1"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="2" y="2" class="st3" width="1" height="1"/>
+		<rect x="3" y="2" class="st3" width="1" height="1"/>
+		<rect x="4" y="2" class="st3" width="1" height="1"/>
+		<rect x="5" y="2" class="st3" width="1" height="1"/>
+		<rect x="5" y="3" class="st3" width="1" height="1"/>
+		<rect x="6" y="3" class="st3" width="1" height="1"/>
+		<rect x="6" y="4" class="st3" width="1" height="1"/>
+		<rect x="6" y="5" class="st3" width="1" height="1"/>
+		<rect x="6" y="6" class="st3" width="1" height="1"/>
+		<rect x="6" y="7" class="st3" width="1" height="1"/>
+		<rect x="5" y="7" class="st3" width="1" height="1"/>
+		<rect x="5" y="8" class="st3" width="1" height="1"/>
+		<rect x="4" y="8" class="st3" width="1" height="1"/>
+		<rect x="3" y="8" class="st3" width="1" height="1"/>
+		<rect x="2" y="8" class="st3" width="1" height="1"/>
+		<rect x="2" y="7" class="st3" width="1" height="1"/>
+		<rect x="2" y="6" class="st3" width="1" height="1"/>
+		<rect x="2" y="5" class="st3" width="1" height="1"/>
+		<rect x="2" y="4" class="st3" width="1" height="1"/>
+		<rect x="2" y="3" class="st3" width="1" height="1"/>
+		<rect x="2" y="2" class="st3" width="1" height="1"/>
 	</g>
 </g>
 <g id="Layer_4">
 	<g>
-		<rect x="10" y="1" fill="#2752E7" width="1" height="1"/>
-		<polygon fill="#0F3AB5" points="11,1 10,1 10,2 11,2 11,1 		"/>
+		<rect x="10" y="1" class="st1" width="1" height="1"/>
+		<polygon class="st2" points="11,1 10,1 10,2 11,2 		"/>
 	</g>
 	<g>
-		<rect x="12" y="1" fill="#2752E7" width="1" height="1"/>
-		<polygon fill="#0F3AB5" points="13,1 12,1 12,2 13,2 13,1 		"/>
+		<rect x="12" y="1" class="st1" width="1" height="1"/>
+		<polygon class="st2" points="13,1 12,1 12,2 13,2 		"/>
 	</g>
 	<g>
-		<rect x="10" y="3" fill="#2752E7" width="1" height="1"/>
-		<polygon fill="#0F3AB5" points="11,3 10,3 10,4 11,4 11,3 		"/>
+		<rect x="10" y="3" class="st1" width="1" height="1"/>
+		<polygon class="st2" points="11,3 10,3 10,4 11,4 		"/>
 	</g>
 	<g>
-		<rect x="12" y="3" fill="#2752E7" width="1" height="1"/>
-		<polygon fill="#0F3AB5" points="13,3 12,3 12,4 13,4 13,3 		"/>
+		<rect x="12" y="3" class="st1" width="1" height="1"/>
+		<polygon class="st2" points="13,3 12,3 12,4 13,4 		"/>
 	</g>
 	<g>
-		<rect x="14" y="3" fill="#2752E7" width="1" height="1"/>
-		<polygon fill="#0F3AB5" points="15,3 14,3 14,4 15,4 15,3 		"/>
+		<rect x="14" y="3" class="st1" width="1" height="1"/>
+		<polygon class="st2" points="15,3 14,3 14,4 15,4 		"/>
 	</g>
 </g>
 </svg>
