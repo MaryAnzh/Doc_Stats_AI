@@ -1,11 +1,1 @@
-<div class="app_wrap">
-  <div class="app_wrap_bg">
-    <img
-      [src]="theme() === 'dark' ? '/assets/bg_dark.webp' : '/assets/bg_light.webp'"
-      alt="Background"
-    />
-  </div>
-  <app-header class="header" [theme]="theme()" [toggleTheme]="toggleTheme" />
-  <router-outlet></router-outlet>
-  <footer>@2026, MaryAnzh</footer>
-</div>
+<router-outlet></router-outlet>

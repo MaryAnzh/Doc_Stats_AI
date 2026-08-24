@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { THEMES, DATA_ATTRIBUTE_THEME, type ThemeType } from './shared';
 import { HeaderComponent } from './layout/header/header';
+import { AppStore } from './core/store/app-store';
 
 const { DARK, LIGHT } = THEMES;
 
@@ -14,29 +15,11 @@ const { DARK, LIGHT } = THEMES;
   styleUrl: './app.scss',
 })
 export class AppComponent {
-  private document = inject(DOCUMENT);
+  store = inject(AppStore);
 
   protected readonly title = signal('Docs Stats AI');
 
-  public readonly theme = signal<ThemeType>(DARK);
-
   constructor() {
-    this.applyTheme(this.theme());
+    this.store.initTheme();
   }
-
-  applyTheme(theme: ThemeType) {
-    const root = this.document.documentElement;
-
-    if (theme === DARK) {
-      root.setAttribute(DATA_ATTRIBUTE_THEME, DARK);
-    } else {
-      root.removeAttribute(DATA_ATTRIBUTE_THEME);
-    }
-  }
-
-  toggleTheme = () => {
-    const next = this.theme() === LIGHT ? DARK : LIGHT;
-    this.theme.set(next);
-    this.applyTheme(next);
-  };
 }

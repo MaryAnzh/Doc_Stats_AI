@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { LoginFormComponent } from '../../components/loginForm/login-form';
+import { LayoutComponent } from '../../../layout/layout/layout';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.html',
-  styleUrl: '../styles.scss',
-  imports: [LoginFormComponent],
+  styleUrls: ['../styles.scss', './login-page.scss'],
+  imports: [LayoutComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPageComponent {}

@@ -1,0 +1,17 @@
+<div class="app_wrap" [class]="withoutHeader() ? 'header-none' : ''">
+  <div class="app_wrap_bg">
+    <img
+      [src]="store.theme() === 'dark' ? 'assets/bg_dark.webp' : 'assets/bg_light.webp'"
+      alt="Background"
+    />
+  </div>
+
+  @if (!withoutHeader()) {
+    <app-header class="header" [theme]="store.theme()" [toggleTheme]="store.toggleTheme" />
+  }
+  <main class="page-content">
+    <ng-content></ng-content>
+  </main>
+
+  <app-footer></app-footer>
+</div>
