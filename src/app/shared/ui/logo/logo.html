@@ -1,4 +1,4 @@
-<div [class]="logoSizeClass">
+<a [class]="logoSizeClass()" routerLink="">
   <img src="assets/logo.webp" alt="DS AI Logo" class="logo-img" />
   @if (showText()) {
     <span class="logo-text">
@@ -7,4 +7,4 @@
       <span class="ai">AI</span>
     </span>
   }
-</div>
+</a>

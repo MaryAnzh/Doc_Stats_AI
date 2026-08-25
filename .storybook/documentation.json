@@ -1,0 +1,1880 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-bcd3a7a8676b600ad0652e4bc7fdca0a6db8b9543c724f061c1a867f743a26cfa017891c6839fb7003c686850a97e26385d969178978da6380bb732f732b0556",
+            "file": "src/app/app.ts",
+            "changeDetection": "ChangeDetectionStrategy.Eager",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.html"
+            ],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "document",
+                    "coverageIgnore": false,
+                    "defaultValue": "inject(DOCUMENT)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "theme",
+                    "coverageIgnore": false,
+                    "defaultValue": "signal<ThemeType>(DARK)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        125,
+                        148
+                    ]
+                },
+                {
+                    "name": "title",
+                    "coverageIgnore": false,
+                    "defaultValue": "signal('Docs Stats AI')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                },
+                {
+                    "name": "toggleTheme",
+                    "coverageIgnore": false,
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37,
+                    "rawdescription": "\n"
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyTheme",
+                    "coverageIgnore": false,
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "ThemeType",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n",
+                    "description": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "ThemeType",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "RouterOutlet"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, DOCUMENT, inject, signal, ChangeDetectionStrategy } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\nimport { THEMES, DATA_ATTRIBUTE_THEME, type ThemeType } from './shared';\nimport { HeaderComponent } from './layout/header/header';\n\nconst { DARK, LIGHT } = THEMES;\n\n@Component({\n  selector: 'app-root',\n  imports: [HeaderComponent, RouterOutlet],\n  templateUrl: './app.html',\n  changeDetection: ChangeDetectionStrategy.Eager,\n  styleUrl: './app.scss',\n})\nexport class AppComponent {\n  private document = inject(DOCUMENT);\n\n  protected readonly title = signal('Docs Stats AI');\n\n  public readonly theme = signal<ThemeType>(DARK);\n\n  constructor() {\n    this.applyTheme(this.theme());\n  }\n\n  applyTheme(theme: ThemeType) {\n    const root = this.document.documentElement;\n\n    if (theme === DARK) {\n      root.setAttribute(DATA_ATTRIBUTE_THEME, DARK);\n    } else {\n      root.removeAttribute(DATA_ATTRIBUTE_THEME);\n    }\n  }\n\n  toggleTheme = () => {\n    const next = this.theme() === LIGHT ? DARK : LIGHT;\n    this.theme.set(next);\n    this.applyTheme(next);\n  };\n}\n",
+            "styleUrl": "./app.scss",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  width: 100%;\n\n  .app_wrap {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: grid;\n    grid-template-columns: 100%;\n    grid-template-rows: max-content auto min-content;\n    justify-content: center;\n    gap: var(--padding-md);\n\n    .app_wrap_bg {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: end;\n      z-index: -1;\n\n      img {\n        width: 100%;\n        max-width: 1536px;\n        object-fit: cover;\n      }\n    }\n\n    app-header {\n      grid-column: 1;\n      grid-row: 1/2;\n    }\n  }\n}\n",
+                    "styleUrl": "./app.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 21,
+                "rawdescription": "\n"
+            },
+            "extends": [],
+            "relationships": {
+                "incoming": [],
+                "outgoing": [
+                    {
+                        "name": "HeaderComponent",
+                        "type": "component"
+                    },
+                    {
+                        "name": "RouterOutlet",
+                        "type": "module"
+                    }
+                ]
+            },
+            "templateData": "<div class=\"app_wrap\">\n  <div class=\"app_wrap_bg\">\n    <img\n      [src]=\"theme() === 'dark' ? '/assets/bg_dark.webp' : '/assets/bg_light.webp'\"\n      alt=\"Background\"\n    />\n  </div>\n  <app-header class=\"header\" [theme]=\"theme()\" [toggleTheme]=\"toggleTheme\" />\n  <router-outlet></router-outlet>\n</div>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-5c970deab559cd75a487cefa91632ccd7f5edf92808ce69996dce72d5c369e743383e5445412a87aad18faeff1f3b80a2ef76a9977f021c130dcb6699ad8660c",
+            "file": "src/app/layout/header/header.ts",
+            "changeDetection": "ChangeDetectionStrategy.Eager",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.html"
+            ],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "theme",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ThemeType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "toggleTheme",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "() => void",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "darkTheme",
+                    "coverageIgnore": false,
+                    "defaultValue": "DARK",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "lightTheme",
+                    "coverageIgnore": false,
+                    "defaultValue": "LIGHT",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "router",
+                    "coverageIgnore": false,
+                    "defaultValue": "inject(Router)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleTheme",
+                    "coverageIgnore": false,
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n",
+                    "description": ""
+                }
+            ],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "LogoComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, inject, ChangeDetectionStrategy } from '@angular/core';\nimport { Router } from '@angular/router';\n\nimport type { ThemeType } from '../../shared';\nimport { THEMES } from '../../shared';\nimport { LogoComponent } from '../../shared/ui';\nconst { LIGHT, DARK } = THEMES;\n\n@Component({\n  selector: 'app-header',\n  imports: [LogoComponent],\n  templateUrl: './header.html',\n  changeDetection: ChangeDetectionStrategy.Eager,\n  styleUrl: './header.scss',\n})\nexport class HeaderComponent {\n  private router = inject(Router);\n\n  readonly theme = input<ThemeType>();\n  readonly toggleTheme = input<() => void>();\n\n  lightTheme = LIGHT;\n  darkTheme = DARK;\n\n  handleTheme() {\n    this.toggleTheme()?.();\n  }\n}\n",
+            "styleUrl": "./header.scss",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../styles/variables' as *;\n\n:host {\n  position: relative;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: var(--padding-md);\n\n  &::after {\n    content: '';\n    position: absolute;\n    bottom: -2px;\n    left: 2%;\n    display: block;\n    width: 96%;\n    height: 1px;\n    background: var(--base-80);\n  }\n\n  @media (min-width: $min-tablet) {\n    display: grid;\n    grid-template-columns: auto max-content;\n    padding: var(--padding-lg);\n  }\n\n  .header_logo {\n    font-family: $font-main;\n    font-size: 1.5rem;\n    font-weight: 700;\n    color: var(--text-primary);\n  }\n\n  .themes_wrap {\n    display: flex;\n\n    gap: var(--padding-md);\n\n    button {\n      width: 1rem;\n      height: 1rem;\n      border-radius: 50%;\n      border: 1px solid var(--base-80);\n      cursor: pointer;\n\n      &:disabled {\n        cursor: not-allowed;\n        opacity: 0.7;\n      }\n\n      &:nth-of-type(1) {\n        background-color: var(--white);\n      }\n\n      &:nth-of-type(2) {\n        background-color: var(--black);\n      }\n    }\n  }\n}\n",
+                    "styleUrl": "./header.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [
+                    {
+                        "name": "AppComponent",
+                        "type": "component"
+                    }
+                ],
+                "outgoing": [
+                    {
+                        "name": "LogoComponent",
+                        "type": "component"
+                    }
+                ]
+            },
+            "templateData": "<div class=\"header_logo\">\n  <app-logo />\n</div>\n<div class=\"themes_wrap\">\n  <button (click)=\"handleTheme()\" [disabled]=\"theme() === lightTheme\"></button>\n  <button (click)=\"handleTheme()\" [disabled]=\"theme() === darkTheme\"></button>\n</div>\n"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-ceeef7f873e5ae7063848263803124e076a2c8cf7e09d813d4ef598a27670e0c08e82c19116d59539cd566e4761d563649deaa1de24346dfa7773aee96e41d8f",
+            "file": "src/app/shared/ui/input/input.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [
+                "./input.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.html"
+            ],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "coverageIgnore": false,
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "error",
+                    "coverageIgnore": false,
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "iconLeft",
+                    "coverageIgnore": false,
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "iconRight",
+                    "coverageIgnore": false,
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "coverageIgnore": false,
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "placeholder",
+                    "coverageIgnore": false,
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "size",
+                    "coverageIgnore": false,
+                    "defaultValue": "MD",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "InputSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "value",
+                    "coverageIgnore": false,
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "rawdescription": "\n",
+                    "required": false
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "value",
+                    "coverageIgnore": false,
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "rawdescription": "\n",
+                    "required": false
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "sizeClass",
+                    "coverageIgnore": false,
+                    "defaultValue": "computed(() => this.sizeClassChart[this.size()])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "sizeClassChart",
+                    "coverageIgnore": false,
+                    "defaultValue": "{\n    [SM]: 'input--sm',\n    [MD]: 'input--md',\n    [LG]: 'input--lg',\n  } as const",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "rawdescription": "\n"
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onChangeValue",
+                    "coverageIgnore": false,
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n",
+                    "description": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, input, model, computed } from '@angular/core';\nimport { InputSize } from '../../models';\nimport { LG, MD, SM } from '../../constants';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.html',\n  styleUrl: './input.scss',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class InputComponent {\n  value = model<string>('');\n  placeholder = input<string>('');\n  label = input<string | null>(null);\n  error = input<string | null>(null);\n\n  iconLeft = input<string | null>(null);\n  iconRight = input<string | null>(null);\n\n  size = input<InputSize>(MD);\n  disabled = input<boolean>(false);\n\n  sizeClassChart = {\n    [SM]: 'input--sm',\n    [MD]: 'input--md',\n    [LG]: 'input--lg',\n  } as const;\n\n  sizeClass = computed(() => this.sizeClassChart[this.size()]);\n\n  onChangeValue(value: string) {\n    this.value.update(() => value);\n  }\n}\n",
+            "styleUrl": "./input.scss",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  .input-wrapper {\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n  }\n\n  .input-label {\n    font-size: 14px;\n    color: var(--base-90);\n  }\n\n  .input-container {\n    position: relative;\n    display: flex;\n    align-items: center;\n  }\n\n  .input-field {\n    width: 100%;\n    border: 1px solid var(--base-40);\n    background: var(--base-10);\n    color: var(--base-100);\n    border-radius: 6px;\n    transition: border-color 0.2s ease;\n\n    &:focus {\n      border-color: var(--accent-80);\n      outline: none;\n    }\n\n    &:disabled {\n      background: var(--base-20);\n      cursor: not-allowed;\n    }\n  }\n\n  .input-icon {\n    position: absolute;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--base-80);\n\n    &.left {\n      left: 10px;\n    }\n\n    &.right {\n      right: 10px;\n    }\n\n    i {\n      font-size: 18px;\n    }\n  }\n\n  /* Sizes */\n  .input--sm .input-field {\n    padding: 4px 8px;\n    padding-left: 32px;\n    padding-right: 32px;\n    font-size: 14px;\n  }\n\n  .input--md .input-field {\n    padding: 6px 10px;\n    padding-left: 36px;\n    padding-right: 36px;\n    font-size: 16px;\n  }\n\n  .input--lg .input-field {\n    padding: 10px 14px;\n    padding-left: 40px;\n    padding-right: 40px;\n    font-size: 18px;\n  }\n\n  .input-error {\n    color: var(--error-80);\n    font-size: 13px;\n  }\n}\n",
+                    "styleUrl": "./input.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [],
+                "outgoing": []
+            },
+            "templateData": "<div class=\"input-wrapper\" [class]=\"sizeClass()\">\n\n  @if (label()) {\n  <label class=\"input-label\">{{ label() }}</label>\n  }\n\n  <div class=\"input-container\">\n\n    @if (iconLeft()) {\n    <span class=\"input-icon left\">\n      <i class=\"bi\" [class]=\"'bi-' + iconLeft()\"></i>\n    </span>\n    }\n\n    <input\n      class=\"input-field\"\n      [placeholder]=\"placeholder()\"\n      [disabled]=\"disabled()\"\n      [value]=\"value()\"\n      (input)=\"onChangeValue($event.target.value)\" />\n\n    @if (iconRight()) {\n    <span class=\"input-icon right\">\n      <i class=\"bi\" [class]=\"'bi-' + iconRight()\"></i>\n    </span>\n    }\n  </div>\n\n  @if (error()) {\n  <div class=\"input-error\">{{ error() }}</div>\n  }\n</div>\n"
+        },
+        {
+            "name": "LogoComponent",
+            "id": "component-LogoComponent-2708a354c609a2a735bb70cc94e61e97919721d97582459a511e48784785672744655e298160d32404ca82aaad90efd04fd19ff4b1b7bdc258624d4418fe2ac6",
+            "file": "src/app/shared/ui/logo/logo.ts",
+            "changeDetection": "ChangeDetectionStrategy.Eager",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-logo",
+            "styleUrls": [
+                "./logo.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./logo.html"
+            ],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "showText",
+                    "coverageIgnore": false,
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "size",
+                    "coverageIgnore": false,
+                    "defaultValue": "DEFAULT_SIZE",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "LogoSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "logoSizeClass",
+                    "coverageIgnore": false,
+                    "defaultValue": "computed(() => (this.size() === SM ? 'logo logo--small' : 'logo'))",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, input, computed } from '@angular/core';\nimport { LogoSize } from '../../models';\nimport { COMPONENTS_SIZE, DEFAULT_SIZE } from '../../constants';\n\nconst { SM } = COMPONENTS_SIZE;\n\n@Component({\n  selector: 'app-logo',\n  imports: [],\n  templateUrl: './logo.html',\n  changeDetection: ChangeDetectionStrategy.Eager,\n  styleUrl: './logo.scss',\n})\nexport class LogoComponent {\n  readonly showText = input<boolean>(true);\n  readonly size = input<LogoSize>(DEFAULT_SIZE);\n\n  readonly logoSizeClass = computed(() => (this.size() === SM ? 'logo logo--small' : 'logo'));\n}\n",
+            "styleUrl": "./logo.scss",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../../styles/variables' as *;\n\n:host {\n  .logo {\n    display: flex;\n    align-items: flex-end;\n    gap: 10px;\n  }\n\n  .logo--small {\n    .logo-img {\n      width: 32px;\n    }\n\n    .logo-text .ds,\n    .logo-text .ai {\n      font-size: 18px;\n    }\n  }\n\n  .logo-img {\n    width: 48px;\n    height: auto;\n    object-fit: contain;\n  }\n\n  .logo-text {\n    display: flex;\n    align-items: flex-end;\n    gap: 4px;\n\n    .ds {\n      color: var(--base-90);\n      font-weight: 300;\n      font-size: 24px;\n      letter-spacing: 0.5px;\n    }\n\n    .ai {\n      color: var(--accent-80);\n      font-weight: 700;\n      font-size: 24px;\n      letter-spacing: 0.5px;\n    }\n\n    .ds_desktop {\n      display: none;\n\n      @media (min-width: $min-tablet) {\n        display: flex;\n      }\n    }\n\n    .ds_mobile {\n      display: flex;\n\n      @media (min-width: $min-tablet) {\n        display: none;\n      }\n    }\n  }\n}\n",
+                    "styleUrl": "./logo.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [
+                    {
+                        "name": "HeaderComponent",
+                        "type": "component"
+                    }
+                ],
+                "outgoing": []
+            },
+            "templateData": "<div [class]=\"logoSizeClass()\">\n  <img src=\"assets/logo.webp\" alt=\"DS AI Logo\" class=\"logo-img\" />\n  @if (showText()) {\n    <span class=\"logo-text\">\n      <span class=\"ds ds_desktop\">Document Statistics</span>\n      <span class=\"ds ds_mobile\">DS</span>\n      <span class=\"ai\">AI</span>\n    </span>\n  }\n</div>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes)],\n}"
+            },
+            {
+                "name": "COMPONENTS_SIZE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/props.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "{\n  SM: 'SM',\n  MD: 'MD',\n  LG: 'LG',\n} as const"
+            },
+            {
+                "name": "DARK",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "THEMES"
+            },
+            {
+                "name": "DARK",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/layout/header/header.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "THEMES"
+            },
+            {
+                "name": "DATA_ATTRIBUTE_THEME",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/theme.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'data-theme'"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/layout/header/header.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<HeaderComponent>",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/input/input.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Email',\n    placeholder: 'Enter email',\n    value: '',\n    size: 'MD',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    showText: true,\n    size: DEFAULT,\n  },\n}"
+            },
+            {
+                "name": "DEFAULT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "COMPONENTS_SIZE"
+            },
+            {
+                "name": "DEFAULT_SIZE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/props.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "'DEFAULT' as const"
+            },
+            {
+                "name": "dirname",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "vitest.config.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url))"
+            },
+            {
+                "name": "ICON_PICKER",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/icon-picker.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "{\r\n\r\n} as const"
+            },
+            {
+                "name": "IconOnly",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    showText: false,\n    size: DEFAULT,\n  },\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/input/input.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Full Name',\n    placeholder: 'Alice',\n    size: 'LG',\n  },\n}"
+            },
+            {
+                "name": "LG",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/props.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "COMPONENTS_SIZE"
+            },
+            {
+                "name": "LIGHT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "THEMES"
+            },
+            {
+                "name": "LIGHT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/layout/header/header.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "THEMES"
+            },
+            {
+                "name": "MD",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/props.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "COMPONENTS_SIZE"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/layout/header/header.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\n  title: 'Layout/Header',\n  component: HeaderComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/input/input.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\n  title: 'UI/Input',\n  component: InputComponent,\n  argTypes: {\n    value: { control: 'text' },\n    placeholder: { control: 'text' },\n    label: { control: 'text' },\n    error: { control: 'text' },\n    iconLeft: { control: 'text' },   // bootstrap icon name\n    iconRight: { control: 'text' },  // bootstrap icon name\n    size: { control: 'select', options: ['SM', 'MD', 'LG'] },\n    disabled: { control: 'boolean' },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\n  title: 'UI/Logo',\n  component: LogoComponent,\n  argTypes: {\n    showText: {\n      control: 'boolean',\n      description: 'Show logo test',\n    },\n    size: {\n      control: 'select',\n      options: [DEFAULT, SM],\n      description: 'Logo size',\n    },\n  },\n}"
+            },
+            {
+                "name": "routes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.routes.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Routes",
+                "defaultValue": "[]"
+            },
+            {
+                "name": "SM",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/props.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "COMPONENTS_SIZE"
+            },
+            {
+                "name": "SM",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "COMPONENTS_SIZE"
+            },
+            {
+                "name": "SM",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "defaultValue": "COMPONENTS_SIZE"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    showText: true,\n    size: SM,\n  },\n}"
+            },
+            {
+                "name": "THEMES",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/constants/theme.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "{\n  LIGHT: 'light',\n  DARK: 'dark',\n} as const"
+            },
+            {
+                "name": "WithError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/input/input.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Email',\n    placeholder: 'Enter email',\n    error: 'Invalid email format',\n    size: 'MD',\n  },\n}"
+            },
+            {
+                "name": "WithIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui/input/input.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Search',\n    placeholder: 'Search...',\n    iconLeft: 'search',\n    iconRight: 'x-lg',\n    size: 'MD',\n  },\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "InputSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "keyof typeof COMPONENTS_SIZE",
+                "file": "src/app/shared/models/props.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "LogoSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "unknown | unknown",
+                "file": "src/app/shared/models/props.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "src/app/shared/ui/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "src/app/shared/ui/logo/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "ThemeType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "typeof THEMES['keyof typeof THEMES']",
+                "file": "src/app/shared/models/theme.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 200
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes)],\n}"
+                }
+            ],
+            "src/app/shared/constants/props.ts": [
+                {
+                    "name": "COMPONENTS_SIZE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/props.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "{\n  SM: 'SM',\n  MD: 'MD',\n  LG: 'LG',\n} as const"
+                },
+                {
+                    "name": "DEFAULT_SIZE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/props.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "'DEFAULT' as const"
+                },
+                {
+                    "name": "LG",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/props.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "COMPONENTS_SIZE"
+                },
+                {
+                    "name": "MD",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/props.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "COMPONENTS_SIZE"
+                },
+                {
+                    "name": "SM",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/props.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "COMPONENTS_SIZE"
+                }
+            ],
+            "src/app/app.ts": [
+                {
+                    "name": "DARK",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "THEMES"
+                },
+                {
+                    "name": "LIGHT",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "THEMES"
+                }
+            ],
+            "src/app/layout/header/header.ts": [
+                {
+                    "name": "DARK",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/layout/header/header.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "THEMES"
+                },
+                {
+                    "name": "LIGHT",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/layout/header/header.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "THEMES"
+                }
+            ],
+            "src/app/shared/constants/theme.ts": [
+                {
+                    "name": "DATA_ATTRIBUTE_THEME",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/theme.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'data-theme'"
+                },
+                {
+                    "name": "THEMES",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/theme.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "{\n  LIGHT: 'light',\n  DARK: 'dark',\n} as const"
+                }
+            ],
+            "src/app/layout/header/header.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/layout/header/header.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<HeaderComponent>",
+                    "defaultValue": "{\n  args: {},\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/layout/header/header.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HeaderComponent>",
+                    "defaultValue": "{\n  title: 'Layout/Header',\n  component: HeaderComponent,\n  parameters: {\n    layout: 'fullscreen',\n  },\n}"
+                }
+            ],
+            "src/app/shared/ui/input/input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/input/input.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Email',\n    placeholder: 'Enter email',\n    value: '',\n    size: 'MD',\n  },\n}"
+                },
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/input/input.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Full Name',\n    placeholder: 'Alice',\n    size: 'LG',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/input/input.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\n  title: 'UI/Input',\n  component: InputComponent,\n  argTypes: {\n    value: { control: 'text' },\n    placeholder: { control: 'text' },\n    label: { control: 'text' },\n    error: { control: 'text' },\n    iconLeft: { control: 'text' },   // bootstrap icon name\n    iconRight: { control: 'text' },  // bootstrap icon name\n    size: { control: 'select', options: ['SM', 'MD', 'LG'] },\n    disabled: { control: 'boolean' },\n  },\n}"
+                },
+                {
+                    "name": "WithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/input/input.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Email',\n    placeholder: 'Enter email',\n    error: 'Invalid email format',\n    size: 'MD',\n  },\n}"
+                },
+                {
+                    "name": "WithIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/input/input.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Search',\n    placeholder: 'Search...',\n    iconLeft: 'search',\n    iconRight: 'x-lg',\n    size: 'MD',\n  },\n}"
+                }
+            ],
+            "src/app/shared/ui/logo/logo.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    showText: true,\n    size: DEFAULT,\n  },\n}"
+                },
+                {
+                    "name": "DEFAULT",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "COMPONENTS_SIZE"
+                },
+                {
+                    "name": "IconOnly",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    showText: false,\n    size: DEFAULT,\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LogoComponent>",
+                    "defaultValue": "{\n  title: 'UI/Logo',\n  component: LogoComponent,\n  argTypes: {\n    showText: {\n      control: 'boolean',\n      description: 'Show logo test',\n    },\n    size: {\n      control: 'select',\n      options: [DEFAULT, SM],\n      description: 'Logo size',\n    },\n  },\n}"
+                },
+                {
+                    "name": "SM",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "COMPONENTS_SIZE"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    showText: true,\n    size: SM,\n  },\n}"
+                }
+            ],
+            "vitest.config.ts": [
+                {
+                    "name": "dirname",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "vitest.config.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url))"
+                }
+            ],
+            "src/app/shared/constants/icon-picker.ts": [
+                {
+                    "name": "ICON_PICKER",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/constants/icon-picker.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "{\r\n\r\n} as const"
+                }
+            ],
+            "src/app/app.routes.ts": [
+                {
+                    "name": "routes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.routes.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Routes",
+                    "defaultValue": "[]"
+                }
+            ],
+            "src/app/shared/ui/logo/logo.ts": [
+                {
+                    "name": "SM",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui/logo/logo.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "defaultValue": "COMPONENTS_SIZE"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/app/shared/models/props.ts": [
+                {
+                    "name": "InputSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "keyof typeof COMPONENTS_SIZE",
+                    "file": "src/app/shared/models/props.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "LogoSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "unknown | unknown",
+                    "file": "src/app/shared/models/props.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/app/shared/ui/input/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "src/app/shared/ui/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "src/app/shared/ui/logo/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "src/app/shared/ui/logo/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "src/app/shared/models/theme.ts": [
+                {
+                    "name": "ThemeType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "typeof THEMES['keyof typeof THEMES']",
+                    "file": "src/app/shared/models/theme.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 200
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "routes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DARK",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LIGHT",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/header/header.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/header/header.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DARK",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/header/header.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LIGHT",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/icon-picker.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ICON_PICKER",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/props.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "COMPONENTS_SIZE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/props.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DEFAULT_SIZE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/props.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LG",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/props.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MD",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/props.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SM",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/theme.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DATA_ATTRIBUTE_THEME",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/constants/theme.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "THEMES",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/props.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "InputSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/props.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "LogoSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/theme.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ThemeType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithError",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithIcons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/input/input.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DEFAULT",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconOnly",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SM",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LogoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui/logo/logo.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SM",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "vitest.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "dirname",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
