@@ -1,12 +1,11 @@
 import { Component, ChangeDetectionStrategy, model, inject } from '@angular/core';
 import { AuthStore } from '../../store/auth-store';
-import { InputComponent } from '../../../shared/ui';
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.html',
   styleUrl: './register-form.scss',
-  imports: [InputComponent],
+  imports: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterFormComponent {

@@ -19,7 +19,7 @@ export default [{
     '@angular-eslint': angular,
   },
   rules: {
-    '@angular-eslint/component-class-suffix': 'warn',
+    '@angular-eslint/component-class-suffix': 'off',
     '@angular-eslint/directive-class-suffix': 'warn',
     '@angular-eslint/use-lifecycle-interface': 'warn',
     '@angular-eslint/no-empty-lifecycle-method': 'warn',
