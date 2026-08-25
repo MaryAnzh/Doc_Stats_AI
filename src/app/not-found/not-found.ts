@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LayoutComponent } from '../layout/layout/layout';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-not-found',
   templateUrl: './not-found.html',
   styleUrl: './not-found.scss',
   imports: [LayoutComponent],
