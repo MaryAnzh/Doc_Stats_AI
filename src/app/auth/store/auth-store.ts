@@ -1,17 +1,16 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { AuthService } from '../../auth/services/auth-service';
 import { LoginType, RegisterType, TokenType } from '../models';
+import { TokenService } from '../services/tokenService';
 
 @Injectable({ providedIn: 'root' })
 export class AuthStore {
   private auth = inject(AuthService);
+  private tokens = inject(TokenService);
 
-  public readonly tokens = signal<TokenType | null>(null);
-  private readonly loading = signal(false);
-  private readonly error = signal<string | null>(null);
-
-  readonly isAuth = computed(() => !!this.tokens());
-  readonly accessToken = computed(() => this.tokens()?.accessToken ?? null);
+  readonly isAuth = computed(() => !!this.tokens.getTokens());
+  readonly loading = signal(false);
+  readonly error = signal<string | null>(null);
 
   login(dto: LoginType) {
     this.loading.set(true);
@@ -19,7 +18,7 @@ export class AuthStore {
 
     this.auth.login(dto).subscribe({
       next: (tokens) => {
-        this.tokens.set(tokens);
+        this.tokens.setTokens(tokens);
         this.loading.set(false);
       },
       error: (err) => {
@@ -35,7 +34,7 @@ export class AuthStore {
 
     this.auth.register(dto).subscribe({
       next: (tokens) => {
-        this.tokens.set(tokens);
+        this.tokens.setTokens(tokens);
         this.loading.set(false);
       },
       error: (err) => {
@@ -46,10 +45,6 @@ export class AuthStore {
   }
 
   logout() {
-    this.tokens.set(null);
-  }
-
-  setTokens(tokens: TokenType) {
-    this.tokens.set(tokens);
+    this.tokens.clear();
   }
 }
