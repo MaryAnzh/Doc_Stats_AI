@@ -3,8 +3,6 @@ import { LogoSize } from '../../models';
 import { COMPONENTS_SIZE, DEFAULT_SIZE } from '../../constants';
 import { RouterLink } from '@angular/router';
 
-const { SM } = COMPONENTS_SIZE;
-
 @Component({
   selector: 'app-logo',
   imports: [RouterLink],
@@ -15,6 +13,4 @@ const { SM } = COMPONENTS_SIZE;
 export class LogoComponent {
   readonly showText = input<boolean>(true);
   readonly size = input<LogoSize>(DEFAULT_SIZE);
-
-  readonly logoSizeClass = computed(() => (this.size() === SM ? 'logo logo--small' : 'logo'));
 }

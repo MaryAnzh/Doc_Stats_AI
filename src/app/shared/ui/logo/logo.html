@@ -1,4 +1,4 @@
-<a [class]="logoSizeClass()" routerLink="">
+<a class="logo" [class]="size() === 'sm' ? 'logo--small' : undefined" routerLink>
   <img src="assets/logo.webp" alt="DS AI Logo" class="logo-img" />
   @if (showText()) {
     <span class="logo-text">
