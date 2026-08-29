@@ -16,7 +16,7 @@ export const COMPONENT_COLORS = {
   GHOST: 'ghost',
   IMAGE: 'image',
 } as const;
-export const { ACCENT, BASE, GHOST, IMAGE, SECONDARY } = COMPONENT_COLORS;
+export const { ACCENT, BASE, GHOST, IMAGE, SECONDARY, SUCCESS, DANGER } = COMPONENT_COLORS;
 
 export const COMPONENT_RADIUS = {
   ROUNDED: 'rounded',
