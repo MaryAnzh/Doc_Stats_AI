@@ -37,8 +37,8 @@ import{i as e}from"./preload-helper-NjPQXrHM.js";import{C as t,F as n,Mn as r,N 
           <app-button
             text="${e.toUpperCase()}"
             color="${e}"
-            size="${MD}"
-            ${e===IMAGE?`imgSrc="assets/webP/google.webp"`:``}
+            size="${m}"
+            ${e===_?`imgSrc="assets/webP/google.webp"`:``}
           ></app-button>
         `).join(``)}
       </div>
@@ -67,8 +67,8 @@ import{i as e}from"./preload-helper-NjPQXrHM.js";import{C as t,F as n,Mn as r,N 
           <app-button
             text="\${color.toUpperCase()}"
             color="\${color}"
-            size="\${MD}"
-            \${color === IMAGE ? \`imgSrc="assets/webP/google.webp"\` : ''}
+            size="\${C.MD}"
+            \${color === C.IMAGE ? \`imgSrc="assets/webP/google.webp"\` : ''}
           ></app-button>
         \`).join('')}
       </div>
