@@ -89,8 +89,8 @@ export const Colors: Story = {
           <app-button
             text="${color.toUpperCase()}"
             color="${color}"
-            size="${MD}"
-            ${color === IMAGE ? `imgSrc="assets/webP/google.webp"` : ''}
+            size="${C.MD}"
+            ${color === C.IMAGE ? `imgSrc="assets/webP/google.webp"` : ''}
           ></app-button>
         `,
           )
