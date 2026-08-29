@@ -1,18 +1,6 @@
 <button
   class="btn"
-  [class]="
-    'btn--' +
-    size() +
-    ' ' +
-    'btn--' +
-    color() +
-    ' ' +
-    'btn--' +
-    radius() +
-    ' ' +
-    'btn--w-' +
-    width()
-  "
+  [class]="`btn--${size()} btn--${color()} btn--${radius()} btn--w-${width()}`"
   [disabled]="disabled()"
   (click)="onClick()"
 >

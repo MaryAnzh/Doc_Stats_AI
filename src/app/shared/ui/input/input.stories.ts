@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/angular-vite';
 import { InputComponent } from './input';
+import { LG, MD, SM, ICON_NAMES } from '../../constants';
+const { SEARCH, SAVE, PLUS, CLOCK, CALENDAR } = ICON_NAMES;
 
 const meta: Meta<InputComponent> = {
   title: 'UI/Input',
@@ -9,9 +11,9 @@ const meta: Meta<InputComponent> = {
     placeholder: { control: 'text' },
     label: { control: 'text' },
     error: { control: 'text' },
-    iconLeft: { control: 'text' }, // bootstrap icon name
-    iconRight: { control: 'text' }, // bootstrap icon name
-    size: { control: 'select', options: ['SM', 'MD', 'LG'] },
+    iconLeft: { control: 'select', options: [SEARCH, PLUS] }, // bootstrap icon name
+    iconRight: { control: 'select', options: [SAVE, CLOCK, CALENDAR] }, // bootstrap icon name
+    size: { control: 'select', options: [SM, MD, LG] },
     disabled: { control: 'boolean' },
   },
 };
@@ -25,7 +27,7 @@ export const Default: Story = {
     label: 'Email',
     placeholder: 'Enter email',
     value: '',
-    size: 'MD',
+    size: MD,
   },
 };
 
@@ -33,9 +35,9 @@ export const WithIcons: Story = {
   args: {
     label: 'Search',
     placeholder: 'Search...',
-    iconLeft: 'search',
-    iconRight: 'x-lg',
-    size: 'MD',
+    iconLeft: SEARCH,
+    iconRight: SAVE,
+    size: MD,
   },
 };
 
@@ -44,7 +46,7 @@ export const WithError: Story = {
     label: 'Email',
     placeholder: 'Enter email',
     error: 'Invalid email format',
-    size: 'MD',
+    size: MD,
   },
 };
 
@@ -52,6 +54,6 @@ export const Large: Story = {
   args: {
     label: 'Full Name',
     placeholder: 'Alice',
-    size: 'LG',
+    size: LG,
   },
 };

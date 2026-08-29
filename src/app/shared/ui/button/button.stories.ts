@@ -1,32 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite';
 import { ButtonComponent } from './button';
-import {
-  ACCENT,
-  AUTO,
-  BASE,
-  CIRCLE,
-  DANGER,
-  FIT,
-  FULL,
-  GHOST,
-  IMAGE,
-  LG,
-  MD,
-  ROUNDED,
-  SECONDARY,
-  SM,
-  SUCCESS,
-} from '../../constants';
+import * as C from '../../constants';
+import { ButtonColor } from '../../models';
+const { SEARCH, SAVE, ARROW_DOWN, ARROW_RIGHT, ARROW_LEFT, CALENDAR, CLOCK } = C.ICON_NAMES;
 
 const meta: Meta<ButtonComponent> = {
   title: 'UI/Button',
   component: ButtonComponent,
   args: {
     text: 'Button',
-    size: MD,
-    color: BASE,
-    radius: ROUNDED,
-    width: AUTO,
+    size: C.MD,
+    color: C.BASE,
+    radius: C.ROUNDED,
+    width: C.AUTO,
     disabled: false,
     iconLeft: null,
     iconRight: null,
@@ -35,28 +21,31 @@ const meta: Meta<ButtonComponent> = {
   argTypes: {
     size: {
       control: 'select',
-      options: [SM, MD, LG],
+      options: [C.SM, C.MD, C.LG],
     },
     color: {
       control: 'select',
-      options: [BASE, SECONDARY, ACCENT, SUCCESS, DANGER, GHOST, IMAGE],
+      options: [C.BASE, C.SECONDARY, C.ACCENT, C.SUCCESS, C.DANGER, C.GHOST, C.IMAGE],
     },
     radius: {
       control: 'select',
-      options: [ROUNDED, CIRCLE],
+      options: [C.ROUNDED, C.CIRCLE],
     },
     width: {
       control: 'select',
-      options: [AUTO, FULL, FIT],
+      options: [C.AUTO, C.FULL, C.FIT],
     },
     iconLeft: {
-      control: 'text',
+      control: 'select',
+      options: [CALENDAR, SEARCH, ARROW_LEFT],
     },
     iconRight: {
-      control: 'text',
+      control: 'select',
+      options: [SEARCH, SAVE, ARROW_DOWN, ARROW_RIGHT],
     },
     imgSrc: {
-      control: 'text',
+      control: 'select',
+      options: ['assets/webP/google.webP'],
     },
   },
 };
@@ -65,40 +54,66 @@ export default meta;
 
 type Story = StoryObj<ButtonComponent>;
 
-export const Base: Story = {};
+const sizes = Object.values(C.COMPONENTS_SIZE);
+export const Sizes: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end;
+">
+        ${sizes
+          .map(
+            (size) => `
+          <app-button
+            text="Size: ${size.toUpperCase()}"
+            size="${size}"
+            iconLeft="${CLOCK}"
+          ></app-button>
+        `,
+          )
+          .join('')}
+      </div>
+    `,
+  }),
+};
+
+const colors = Object.values(C.COMPONENT_COLORS);
+export const Colors: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        ${colors
+          .map(
+            (color) => `
+          <app-button
+            text="${color.toUpperCase()}"
+            color="${color}"
+            size="${MD}"
+            ${color === IMAGE ? `imgSrc="assets/webP/google.webp"` : ''}
+          ></app-button>
+        `,
+          )
+          .join('')}
+      </div>
+    `,
+  }),
+};
 
 export const WithIconLeft: Story = {
   args: {
-    iconLeft: 'plus',
+    iconLeft: SEARCH,
   },
 };
 
 export const WithIconRight: Story = {
   args: {
-    iconRight: 'arrow-right',
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    color: GHOST,
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    color: DANGER,
+    iconRight: ARROW_RIGHT,
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-  },
-};
-
-export const ImageButton: Story = {
-  args: {
-    imgSrc: 'assets/webP/google.webp',
   },
 };

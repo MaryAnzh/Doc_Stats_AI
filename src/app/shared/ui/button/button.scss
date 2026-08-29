@@ -8,6 +8,16 @@
   border: none;
   transition: 0.2s ease;
   font-weight: 500;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: 1px solid transparent;
+
+  &:active,
+  &:focus {
+    border: none;
+    outline: 1px solid transparent;
+  }
 
   /* ---------- SIZES ---------- */
   &.btn--sm {
@@ -117,9 +127,6 @@
   }
 
   /* ---------- RADIUS ---------- */
-  &.btn--rounded {
-    border-radius: inherit;
-  }
 
   &.btn--circle {
     border-radius: 50%;
@@ -127,44 +134,43 @@
 
   /* BASE */
   &.btn--base {
-    background: var(--base-80);
+    background: var(--base-90);
     color: var(--base-10);
 
     &:hover {
-      background: var(--base-60);
+      background: var(--base-80);
     }
 
     &:active {
-      background: var(--base-40);
+      background: var(--base-100);
     }
 
     &:focus {
-      outline: 2px solid var(--base-20);
+      outline-color: var(--base-20);
     }
   }
-
   /* SECONDARY */
   &.btn--secondary {
-    background: var(--base-40);
-    color: var(--base-100);
+    background: var(--base-10);
+    color: var(--base-80);
 
     &:hover {
       background: var(--base-20);
     }
 
     &:active {
-      background: var(--base-10);
+      background: var(--base-0);
     }
 
     &:focus {
-      outline: 2px solid var(--base-60);
+      outline-color: var(--base-60);
     }
   }
 
   /* ACCENT */
   &.btn--accent {
     background: var(--accent-80);
-    color: var(--black);
+    color: var(--white);
 
     &:hover {
       background: var(--accent-60);
@@ -175,7 +181,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--accent-60);
+      outline-color: var(--accent-60);
     }
   }
 
@@ -193,14 +199,14 @@
     }
 
     &:focus {
-      outline: 2px solid var(--success-40);
+      outline-color: var(--success-80);
     }
   }
 
   /* ERROR */
   &.btn--danger {
     background: var(--error-100);
-    color: var(--black);
+    color: var(--white);
 
     &:hover {
       background: var(--error-80);
@@ -211,7 +217,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--error-40);
+      outline-color: var(--error-40);
     }
   }
 
@@ -220,6 +226,7 @@
     background: transparent;
     color: var(--base-80);
     border: 1px solid var(--base-40);
+    outline: none;
 
     &:hover {
       color: var(--base-100);
@@ -230,17 +237,21 @@
     }
 
     &:focus {
-      outline: 2px solid var(--base-20);
+      border-color: var(--base-60);
+      outline: none;
     }
   }
 
   /* IMG BUTTON */
-  &.btn--img {
+  &.btn--image {
     background: transparent;
+    color: var(--base-90);
     padding: 0;
+    outline: none;
+    border: none;
 
     &:hover {
-      opacity: 0.8;
+      color: var(--base-100);
     }
 
     &:active {
@@ -251,7 +262,7 @@
   /* DISABLED */
   &:disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    pointer-events: none;
   }
 
   .btn-text {
