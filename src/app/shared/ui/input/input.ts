@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, input, model, computed } from '@angular/core';
-import { InputSize } from '../../models';
+import { InputIcon, InputSize } from '../../models';
 import { LG, MD, SM } from '../../constants';
 
 @Component({
@@ -14,19 +14,11 @@ export class InputComponent {
   readonly label = input<string | null>(null);
   readonly error = input<string | null>(null);
 
-  readonly iconLeft = input<string | null>(null);
-  readonly iconRight = input<string | null>(null);
+  readonly iconLeft = input<InputIcon | null>(null);
+  readonly iconRight = input<InputIcon | null>(null);
 
   readonly size = input<InputSize>(MD);
   readonly disabled = input<boolean>(false);
-
-  sizeClassChart = {
-    [SM]: 'input--sm',
-    [MD]: 'input--md',
-    [LG]: 'input--lg',
-  } as const;
-
-  readonly sizeClass = computed(() => this.sizeClassChart[this.size()]);
 
   onChangeValue(value: string) {
     this.value.update(() => value);

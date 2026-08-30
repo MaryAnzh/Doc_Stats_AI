@@ -1,4 +1,4 @@
-<div class="input-wrapper" [class]="sizeClass()">
+<div class="input-wrapper" [class]="`input--${size()}`">
   @if (label()) {
     <label class="input-label">{{ label() }}</label>
   }

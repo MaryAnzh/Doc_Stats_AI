@@ -1,15 +1,22 @@
-import { Meta, StoryObj } from '@storybook/angular-vite';
+import { Meta, StoryObj, applicationConfig } from '@storybook/angular-vite';
+import { provideRouter, ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+
 import { LogoComponent } from './logo';
-import { COMPONENTS_SIZE, DEFAULT_SIZE as DEFAULT } from '../../constants';
-const { SM } = COMPONENTS_SIZE;
+import { SM, DEFAULT_SIZE as DEFAULT } from '../../constants';
 
 const meta: Meta<LogoComponent> = {
   title: 'UI/Logo',
   component: LogoComponent,
+  decorators: [
+    applicationConfig({
+      providers: [provideRouter([])],
+    }),
+  ],
   argTypes: {
     showText: {
       control: 'boolean',
-      description: 'Show logo test',
+      description: 'Show logo text',
     },
     size: {
       control: 'select',

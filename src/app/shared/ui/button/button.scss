@@ -1,0 +1,271 @@
+@use '../../../../styles/variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s ease;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: 1px solid transparent;
+
+  &:active,
+  &:focus {
+    border: none;
+    outline: 1px solid transparent;
+  }
+
+  /* ---------- SIZES ---------- */
+  &.btn--sm {
+    height: 24px;
+    padding: 6px 10px;
+    gap: 4px;
+    border-radius: 6px;
+    font-size: 10px;
+    line-height: 12px;
+
+    .btn-img {
+      width: 12px;
+      height: 12px;
+    }
+
+    i.bi {
+      font-size: 12px;
+    }
+  }
+
+  &.btn--md {
+    height: 32px;
+    padding: 8px 16px;
+    gap: 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 14px;
+
+    .btn-img {
+      width: 16px;
+      height: 16px;
+    }
+
+    i.bi {
+      font-size: 16px;
+    }
+  }
+
+  &.btn--lg {
+    height: 40px;
+    padding: 10px 16px;
+    gap: 6px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 20px;
+
+    .btn-img {
+      width: 20px;
+      height: 20px;
+    }
+
+    i.bi {
+      font-size: 20px;
+    }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: $max-mobile) {
+    &.btn--lg {
+      height: 32px;
+      padding: 8px 16px;
+      gap: 6px;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 14px;
+
+      .btn-img {
+        width: 16px;
+        height: 16px;
+      }
+
+      i.bi {
+        font-size: 16px;
+      }
+    }
+
+    &.btn--md {
+      height: 24px;
+      padding: 6px 10px;
+      gap: 4px;
+      border-radius: 6px;
+      font-size: 10px;
+      line-height: 12px;
+
+      .btn-img {
+        width: 12px;
+        height: 12px;
+      }
+
+      i.bi {
+        font-size: 12px;
+      }
+    }
+  }
+
+  /* ---------- WIDTH ---------- */
+  &.btn--w-auto {
+    width: auto;
+  }
+
+  &.btn--w-full {
+    width: 100%;
+  }
+
+  &.btn--w-fit {
+    width: fit-content;
+  }
+
+  /* ---------- RADIUS ---------- */
+
+  &.btn--circle {
+    border-radius: 50%;
+  }
+
+  /* BASE */
+  &.btn--base {
+    background: var(--base-90);
+    color: var(--base-10);
+
+    &:hover {
+      background: var(--base-80);
+    }
+
+    &:active {
+      background: var(--base-100);
+    }
+
+    &:focus {
+      outline-color: var(--base-20);
+    }
+  }
+  /* SECONDARY */
+  &.btn--secondary {
+    background: var(--base-10);
+    color: var(--base-80);
+
+    &:hover {
+      background: var(--base-20);
+    }
+
+    &:active {
+      background: var(--base-0);
+    }
+
+    &:focus {
+      outline-color: var(--base-60);
+    }
+  }
+
+  /* ACCENT */
+  &.btn--accent {
+    background: var(--accent-80);
+    color: var(--white);
+
+    &:hover {
+      background: var(--accent-60);
+    }
+
+    &:active {
+      background: var(--accent-100);
+    }
+
+    &:focus {
+      outline-color: var(--accent-60);
+    }
+  }
+
+  /* SUCCESS */
+  &.btn--success {
+    background: var(--success-100);
+    color: var(--black);
+
+    &:hover {
+      background: var(--success-80);
+    }
+
+    &:active {
+      background: var(--success-60);
+    }
+
+    &:focus {
+      outline-color: var(--success-80);
+    }
+  }
+
+  /* ERROR */
+  &.btn--danger {
+    background: var(--error-100);
+    color: var(--white);
+
+    &:hover {
+      background: var(--error-80);
+    }
+
+    &:active {
+      background: var(--error-60);
+    }
+
+    &:focus {
+      outline-color: var(--error-40);
+    }
+  }
+
+  /* GHOST */
+  &.btn--ghost {
+    background: transparent;
+    color: var(--base-80);
+    border: 1px solid var(--base-40);
+    outline: none;
+
+    &:hover {
+      color: var(--base-100);
+    }
+
+    &:active {
+      color: var(--base-60);
+    }
+
+    &:focus {
+      border-color: var(--base-60);
+      outline: none;
+    }
+  }
+
+  /* IMG BUTTON */
+  &.btn--image {
+    background: transparent;
+    color: var(--base-90);
+    padding: 0;
+    outline: none;
+    border: none;
+
+    &:hover {
+      color: var(--base-100);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  /* DISABLED */
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .btn-text {
+    white-space: nowrap;
+  }
+}

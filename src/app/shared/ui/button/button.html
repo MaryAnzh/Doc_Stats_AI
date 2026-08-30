@@ -1,0 +1,22 @@
+<button
+  class="btn"
+  [class]="`btn--${size()} btn--${color()} btn--${radius()} btn--w-${width()}`"
+  [disabled]="disabled()"
+  (click)="onClick()"
+>
+  @if (imgSrc()) {
+    <img class="btn-img" [src]="imgSrc()" alt="icon" />
+  }
+
+  @if (iconLeft()) {
+    <i class="bi" [class]="'bi-' + iconLeft()"></i>
+  }
+
+  @if (text()) {
+    <span class="btn-text">{{ text() }}</span>
+  }
+
+  @if (iconRight()) {
+    <i class="bi" [class]="'bi-' + iconRight()"></i>
+  }
+</button>
