@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
-import { LoginType, RegisterType, TokenType } from '../models';
+import { CurrentUserType, LoginType, RegisterType, TokenType } from '../models';
 import { AUTH, LOGIN, LOGOUT, ME, REFRESH, REGISTER } from '../../shared';
 
 @Injectable({ providedIn: 'root' })
@@ -32,8 +32,8 @@ export class AuthService {
     return this.http.post<TokenType>(`${this.api}/${REGISTER}`, dto);
   }
 
-  me(): Observable<any> {
-    return this.http.get(`${this.api}/${ME}`);
+  me(): Observable<CurrentUserType> {
+    return this.http.get<CurrentUserType>(`${this.api}/${ME}`);
   }
 
   logout(): Observable<void> {

@@ -1,12 +1,5 @@
 <div class="auth_form">
-  <h2 appTypography="headingSMedium">Register</h2>
-
-  <app-input
-    label="Name"
-    placeholder="Your name"
-    [value]="name()"
-    (valueChange)="name.set($event)"
-  ></app-input>
+  <h2 appTypography="headingSMedium">Login</h2>
 
   <app-input
     label="Email"
@@ -29,5 +22,5 @@
     </div>
   }
 
-  <app-button text="Register" size="md" [disabled]="loading()" (click)="submit()"></app-button>
+  <app-button text="Login" size="md" [disabled]="loading()" (click)="submit()"></app-button>
 </div>

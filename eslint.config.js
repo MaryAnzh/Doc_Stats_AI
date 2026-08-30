@@ -18,6 +18,7 @@ export default [
     },
     plugins: {
       '@angular-eslint': angular,
+      "@typescript-eslint": tseslint.plugin,
     },
     rules: {
       '@angular-eslint/component-class-suffix': 'off',
@@ -28,6 +29,7 @@ export default [
       '@angular-eslint/prefer-standalone': 'warn',
       '@angular-eslint/no-lifecycle-call': 'error',
       '@angular-eslint/prefer-signals': 'warn',
+      "@typescript-eslint/no-explicit-any": "error"
     },
   },
   {

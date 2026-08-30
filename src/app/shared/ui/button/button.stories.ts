@@ -101,9 +101,25 @@ export const Colors: Story = {
 };
 
 export const WithIconLeft: Story = {
-  args: {
-    iconLeft: SEARCH,
-  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end;
+">
+        ${sizes
+          .map(
+            (size) => `
+          <app-button
+            text="With left icon"
+            size="${size}"
+            iconLeft="plus"
+          ></app-button>
+        `,
+          )
+          .join('')}
+      </div>
+    `,
+  }),
 };
 
 export const WithIconRight: Story = {
