@@ -16,9 +16,7 @@ const { LIGHT, DARK } = THEMES;
 export class HeaderComponent {
   private router = inject(Router);
   readonly isLoginPage = computed(() => this.router.url === `/${APP_ROUTES.AUTH_LOGIN}`);
-  constructor() {
-    console.log(this.isLoginPage());
-  }
+
   readonly theme = input<ThemeType>();
   readonly toggleTheme = input<() => void>();
 
