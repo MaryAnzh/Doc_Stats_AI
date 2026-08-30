@@ -1,12 +1,13 @@
 @use '../../../styles/variables' as *;
 
-:host {
+.header-wrap {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto max-content;
   align-items: center;
   padding: var(--padding-md);
+  gap: var(--padding-md);
 
   &::after {
     content: '';
@@ -20,12 +21,17 @@
   }
 
   @media (min-width: $min-tablet) {
-    display: grid;
-    grid-template-columns: auto max-content;
     padding: var(--padding-lg);
   }
 
   .header_logo {
+    grid-column: 1/3;
+    grid-row: 1;
+
+    @media (min-width: $min-tablet) {
+      grid-column: 1/2;
+    }
+
     font-family: $font-main;
     font-size: 1.5rem;
     font-weight: 700;
@@ -58,4 +64,8 @@
       }
     }
   }
+}
+
+.with-login-btn {
+  grid-template-columns: auto repeat(2, min-content);
 }

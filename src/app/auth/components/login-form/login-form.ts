@@ -1,9 +1,8 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { signal, computed } from '@angular/core';
 import { AuthStore } from '../../store/auth-store';
-import { InputComponent } from '../../../shared/ui';
+import { InputComponent, ButtonComponent } from '../../../shared/ui';
 import { TypographyDirective } from '../../../shared/directive/typography';
-import { ButtonComponent } from '../../../shared/ui/button/button';
 
 @Component({
   selector: 'app-login-form',

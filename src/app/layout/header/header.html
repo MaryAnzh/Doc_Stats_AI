@@ -1,7 +1,13 @@
-<div class="header_logo">
-  <app-logo />
-</div>
-<div class="themes_wrap">
-  <button (click)="handleTheme()" [disabled]="theme() === lightTheme"></button>
-  <button (click)="handleTheme()" [disabled]="theme() === darkTheme"></button>
+<div class="header-wrap" [class]="isLoginPage() ? '' : 'with-login-btn'">
+  <div class="header_logo">
+    <app-logo />
+  </div>
+  @if (!isLoginPage()) {
+    <app-button text="Login" size="md" color="accent" navTo="auth/login"></app-button>
+  }
+
+  <div class="themes_wrap">
+    <button (click)="handleTheme()" [disabled]="theme() === lightTheme"></button>
+    <button (click)="handleTheme()" [disabled]="theme() === darkTheme"></button>
+  </div>
 </div>

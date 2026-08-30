@@ -5,6 +5,17 @@
   width: 100%;
   max-width: 520px;
   justify-content: center;
+  padding: var(--padding-md);
+  background-color: var(--base-10);
+  border-radius: var(--br-md);
+  border: 1px solid var(--base-40);
+  box-shadow: var(--box-shadow);
+
+  .auth_btn_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .auth_error {

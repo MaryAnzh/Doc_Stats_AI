@@ -1,5 +1,5 @@
 <div class="auth_form">
-  <h2 appTypography="headingSMedium">Login</h2>
+  <h2 appTypography="headingLMedium">Login</h2>
 
   <app-input
     label="Email"
@@ -21,6 +21,20 @@
       {{ error() }}
     </div>
   }
-
-  <app-button text="Login" size="md" [disabled]="loading()" (click)="submit()"></app-button>
+  <div class="auth_btn_wrap">
+    <app-button
+      text="Login"
+      size="md"
+      [disabled]="loading()"
+      color="accent"
+      (click)="submit()"
+    ></app-button>
+    <app-button
+      text="Go to Register"
+      size="md"
+      [disabled]="loading()"
+      color="ghost"
+      navTo="auth/register"
+    ></app-button>
+  </div>
 </div>
