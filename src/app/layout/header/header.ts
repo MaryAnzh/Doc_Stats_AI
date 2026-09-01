@@ -1,10 +1,8 @@
-import { Component, input, inject, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { Component, input, inject, ChangeDetectionStrategy, computed } from '@angular/core';
 import { Router } from '@angular/router';
 
-import type { ThemeType } from '../../shared';
-import { APP_ROUTES, THEMES } from '../../shared';
+import { APP_ROUTES, DARK, LIGHT, type ThemeType } from '../../shared';
 import { LogoComponent, ButtonComponent } from '../../shared/ui';
-const { LIGHT, DARK } = THEMES;
 
 @Component({
   selector: 'app-header',

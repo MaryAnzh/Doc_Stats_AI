@@ -1,6 +1,5 @@
 import { Meta, StoryObj, applicationConfig } from '@storybook/angular-vite';
-import { provideRouter, ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { provideRouter } from '@angular/router';
 
 import { LogoComponent } from './logo';
 import { SM, DEFAULT_SIZE as DEFAULT } from '../../constants';

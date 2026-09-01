@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, inject, DOCUMENT } from '@angular/core';
+import { Injectable, signal, inject, DOCUMENT } from '@angular/core';
 import { DARK, DATA_ATTRIBUTE_THEME, LIGHT, ThemeType } from '../../shared';
 import { AppService } from '../service/app-service';
 

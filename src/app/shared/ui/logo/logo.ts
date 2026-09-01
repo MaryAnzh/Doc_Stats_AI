@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, input, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 import { LogoSize } from '../../models';
-import { COMPONENTS_SIZE, DEFAULT_SIZE } from '../../constants';
+import { DEFAULT_SIZE } from '../../constants';
 import { RouterLink } from '@angular/router';
 
 @Component({

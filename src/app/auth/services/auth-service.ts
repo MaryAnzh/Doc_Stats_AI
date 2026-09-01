@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 import { LoginType, RegisterType, TokenType } from '../models';
-import { AUTH, LOGIN, LOGOUT, ME, REFRESH, REGISTER } from '../../shared';
+import { AUTH, LOGIN, LOGOUT, ME, REGISTER } from '../../shared';
 import { UserType } from '../../shared/models/user';
 
 @Injectable({ providedIn: 'root' })

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard';
 
-import { APP_ROUTES, AUTH, DASHBOARD, LOGIN, REGISTER } from './shared/constants';
+import { APP_ROUTES, DASHBOARD } from './shared/constants';
 const { AUTH_LOGIN, AUTH_REGISTER, NOT_FOUND } = APP_ROUTES;
 
 export const routes: Routes = [

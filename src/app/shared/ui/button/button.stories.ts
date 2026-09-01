@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular-vite';
 import { ButtonComponent } from './button';
 import * as C from '../../constants';
-import { ButtonColor } from '../../models';
 const { SEARCH, SAVE, ARROW_DOWN, ARROW_RIGHT, ARROW_LEFT, CALENDAR, CLOCK } = C.ICON_NAMES;
 
 const meta: Meta<ButtonComponent> = {

@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
 import { AuthStore } from '../../store/auth-store';
 import { InputComponent, ButtonComponent } from '../../../shared/ui';
 import { TypographyDirective } from '../../../shared/directive/typography';

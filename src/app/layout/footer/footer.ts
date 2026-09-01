@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, inject, computed } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AppStore } from '../../core/store/app-store';
 import { TypographyDirective } from '../../shared/directive/typography';
 

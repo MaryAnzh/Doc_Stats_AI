@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, input, model, computed } from '@angular/core';
 import { InputIcon, InputSize } from '../../models';
-import { LG, MD, SM } from '../../constants';
+import { MD } from '../../constants';
 
 @Component({
   selector: 'app-input',

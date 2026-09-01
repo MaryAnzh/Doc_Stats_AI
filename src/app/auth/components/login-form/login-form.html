@@ -1,5 +1,5 @@
 <div class="auth_form">
-  <h2 appTypography variant="bodyMMedium">Login</h2>
+  <h2 appTypography="headingMMedium">Login</h2>
 
   <app-input
     label="Email"
@@ -29,12 +29,6 @@
       color="accent"
       (click)="submit()"
     ></app-button>
-    <app-button
-      text="Go to Register"
-      size="md"
-      [disabled]="loading()"
-      color="ghost"
-      navTo="auth/register"
-    ></app-button>
+    <app-button text="Go to Register" size="md" [disabled]="loading()" color="ghost"></app-button>
   </div>
 </div>

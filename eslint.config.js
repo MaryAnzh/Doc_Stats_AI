@@ -29,8 +29,25 @@ export default [
       '@angular-eslint/prefer-standalone': 'warn',
       '@angular-eslint/no-lifecycle-call': 'error',
       '@angular-eslint/prefer-signals': 'warn',
-      "@typescript-eslint/no-explicit-any": "error"
-    },
+
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          args: "none",
+          ignoreRestSiblings: true,
+          caughtErrors: "none"
+        }
+      ],
+      "@typescript-eslint/no-explicit-any": "error",
+      "no-duplicate-imports": "error",
+      "@typescript-eslint/no-unused-expressions": "error",
+      "no-var": "error",
+      "eqeqeq": ["error", "always"],
+      "no-redeclare": "error",
+    }
+
   },
   {
     "files": ["*.html"],
