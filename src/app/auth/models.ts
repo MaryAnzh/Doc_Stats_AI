@@ -11,10 +11,3 @@ export type LoginType = {
 export type RegisterType = LoginType & {
   name?: string;
 };
-
-export type CurrentUserType = {
-  id: string;
-  name: string | null;
-  email: string;
-  avatarUrl: string | null;
-};

@@ -5,5 +5,18 @@
   .footer {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    gap: var(--padding-md);
+
+    .footer-server-health-wrap {
+      display: flex;
+      align-items: center;
+      gap: var(--padding-md);
+      color: var(--success-80);
+    }
+
+    .health-err {
+      color: var(--error-100);
+    }
   }
 }

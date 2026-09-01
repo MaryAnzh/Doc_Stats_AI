@@ -1,3 +1,11 @@
+@let check = isServerHealth();
+
 <div class="footer">
-  <span>©2026, MaryAnzh</span>
+  <span appTypography variant="descriptionXSMedium">©2026, MaryAnzh</span>
+  <div class="footer-server-health-wrap" [class]="check ? '' : 'health-err'">
+    <h6 appTypography variant="descriptionXSMedium">
+      {{ check ? 'Server is Health' : 'Server unavailable' }}
+    </h6>
+    <i class="bi" [class]="check ? 'bi-check-circle-fill' : 'bi-x-circle-fill'"></i>
+  </div>
 </div>
