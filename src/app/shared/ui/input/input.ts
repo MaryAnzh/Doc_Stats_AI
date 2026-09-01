@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, model, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, model } from '@angular/core';
 import { InputIcon, InputSize } from '../../models';
 import { MD } from '../../constants';
 
