@@ -1,10 +1,10 @@
 import { Injectable, signal } from '@angular/core';
-import { TokenType } from '../models';
+import { TokensType } from '../models';
 import { TOKENS } from '../../shared';
 
 @Injectable({ providedIn: 'root' })
 export class TokenService {
-  private readonly tokens = signal<TokenType | null>(null);
+  private readonly tokens = signal<TokensType | null>(null);
 
   getTokens() {
     return this.tokens();
@@ -14,7 +14,10 @@ export class TokenService {
     return this.tokens()?.accessToken ?? null;
   }
 
-  setTokens(tokens: TokenType) {
+  setTokens(tokens: TokensType) {
+    console.log(tokens);
+    console.log('tokens');
+
     this.tokens.set(tokens);
     localStorage.setItem(TOKENS, JSON.stringify(tokens));
   }

@@ -33,7 +33,6 @@ export class AppStore {
 
   serverHealth() {
     this.appService.health().subscribe((isHealth) => {
-      console.log(`isHealth: ${isHealth}`);
       this.isServerHealth.set(isHealth);
     });
   }

@@ -21,6 +21,7 @@
   .logo--small {
     .logo-img {
       width: 32px;
+      aspect-ratio: 48/53;
     }
 
     .logo-text .ds,
@@ -31,7 +32,7 @@
 
   .logo-img {
     width: 48px;
-    height: auto;
+    height: 53px;
     object-fit: contain;
   }
 

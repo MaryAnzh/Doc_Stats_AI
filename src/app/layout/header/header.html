@@ -1,9 +1,16 @@
-<div class="header-wrap" [class]="isLoginPage() ? '' : 'with-login-btn'">
+@let auth = isAuth();
+@let loginPage = isLoginPage();
+
+<div class="header-wrap" [class]="loginPage ? '' : 'with-login-btn'">
   <div class="header_logo">
     <app-logo />
   </div>
-  @if (!isLoginPage()) {
+  @if (!loginPage && !auth) {
     <app-button text="Login" size="md" color="accent" navTo="auth/login"></app-button>
+  }
+
+  @if (auth) {
+    <app-button text="Logout" size="md" color="accent" (click)="handleLogout()"></app-button>
   }
 
   <div class="themes_wrap">

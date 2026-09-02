@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
-import { LoginType, RegisterType, TokenType } from '../models';
+import { LoginType, RegisterType, TokensType } from '../models';
 import { AUTH, LOGIN, LOGOUT, ME, REGISTER } from '../../shared';
 import { UserType } from '../../shared/models/user';
 
@@ -13,12 +13,12 @@ export class AuthService {
   private http = inject(HttpClient);
   private api = `${this.baseUrl}/${AUTH}`;
 
-  login(dto: LoginType): Observable<TokenType> {
-    return this.http.post<TokenType>(`${this.api}/${LOGIN}`, dto);
+  login(dto: LoginType): Observable<TokensType> {
+    return this.http.post<TokensType>(`${this.api}/${LOGIN}`, dto);
   }
 
-  register(dto: RegisterType): Observable<TokenType> {
-    return this.http.post<TokenType>(`${this.api}/${REGISTER}`, dto);
+  register(dto: RegisterType): Observable<TokensType> {
+    return this.http.post<TokensType>(`${this.api}/${REGISTER}`, dto);
   }
 
   me(): Observable<UserType> {

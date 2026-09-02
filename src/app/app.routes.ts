@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard';
 
 import { APP_ROUTES, DASHBOARD } from './shared/constants';
+import { publicGuard } from './auth/guards/public-guard';
 const { AUTH_LOGIN, AUTH_REGISTER, NOT_FOUND } = APP_ROUTES;
 
 export const routes: Routes = [
@@ -9,11 +10,13 @@ export const routes: Routes = [
   { path: DASHBOARD, redirectTo: '', pathMatch: 'full' },
   {
     path: AUTH_LOGIN,
+    canActivate: [publicGuard],
     loadComponent: () =>
       import('../app/auth/pages/login-page/login-page').then((m) => m.LoginPageComponent),
   },
   {
     path: AUTH_REGISTER,
+    canActivate: [publicGuard],
     loadComponent: () =>
       import('../app/auth/pages/register-page/register-page').then((m) => m.RegisterPageComponent),
   },

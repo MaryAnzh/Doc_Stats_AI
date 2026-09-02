@@ -3,7 +3,7 @@ export const ROUTES = {
   LOGIN: 'login',
   REGISTER: 'register',
   REFRESH: 'refresh',
-  ME: 'me',
+  ME: 'current-user',
   LOGOUT: 'logout',
   DASHBOARD: 'dashboard',
 } as const;
