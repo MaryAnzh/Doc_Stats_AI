@@ -83,4 +83,8 @@ export class AuthStore {
     this.currentUser.set(null);
     this.router.navigate([`/${APP_ROUTES.AUTH_LOGIN}`]);
   }
+
+  clearError() {
+    this.error.set(null);
+  }
 }

@@ -21,8 +21,8 @@ export class ButtonComponent {
   readonly radius = input<T.ButtonRadius>(C.ROUNDED);
   readonly width = input<T.ButtonWidth>(C.AUTO);
 
-  readonly iconLeft = input<T.IconName | null>(null);
-  readonly iconRight = input<T.IconName | null>(null);
+  readonly iconLeft = input<T.IconNameType | null>(null);
+  readonly iconRight = input<T.IconNameType | null>(null);
 
   readonly imgSrc = input<string | null>(null);
 

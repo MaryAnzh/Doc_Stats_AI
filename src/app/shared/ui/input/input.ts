@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, input, model } from '@angular/core';
-import { InputIcon, InputSize } from '../../models';
-import { MD } from '../../constants';
+import { Component, ChangeDetectionStrategy, input, model, output } from '@angular/core';
+import { INPUT_TYPES, MD } from '../../constants';
+import * as T from '../../models';
 
 @Component({
   selector: 'app-input',
@@ -14,13 +14,19 @@ export class InputComponent {
   readonly label = input<string | null>(null);
   readonly error = input<string | null>(null);
 
-  readonly iconLeft = input<InputIcon | null>(null);
-  readonly iconRight = input<InputIcon | null>(null);
+  readonly iconLeft = input<T.IconNameType | null>(null);
+  readonly iconRight = input<T.IconNameType | null>(null);
 
-  readonly size = input<InputSize>(MD);
+  readonly size = input<T.InputSize>(MD);
+  readonly valueType = input<T.InputValueType>(INPUT_TYPES.TEXT);
   readonly disabled = input<boolean>(false);
+  readonly onFocus = output<void>();
 
-  onChangeValue(value: string) {
+  handleChangeValue(value: string) {
     this.value.update(() => value);
+  }
+
+  handleFocus() {
+    this.onFocus.emit();
   }
 }

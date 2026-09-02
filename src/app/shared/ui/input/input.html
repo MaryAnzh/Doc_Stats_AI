@@ -15,7 +15,9 @@
       [placeholder]="placeholder()"
       [disabled]="disabled()"
       [value]="value()"
-      (input)="onChangeValue($event.target.value)"
+      [type]="valueType()"
+      (input)="handleChangeValue($event.target.value)"
+      (focus)="handleFocus()"
     />
 
     @if (iconRight()) {
