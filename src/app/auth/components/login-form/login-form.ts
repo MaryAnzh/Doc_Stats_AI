@@ -40,13 +40,16 @@ export class LoginFormComponent {
       message: 'Password must contain at least one special symbol',
     });
   });
+  constructor() {
+    console.log(this.loginForm().errors());
+  }
 
   handleFocus() {
     this.store.clearError();
   }
 
   submit() {
-    if (this.loginForm.invalid()) return;
+    if (this.loginForm().invalid()) return;
 
     this.store.login({
       email: this.loginModel().email,

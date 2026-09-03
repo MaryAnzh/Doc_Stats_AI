@@ -1,98 +1,217 @@
+@use '../../../../styles/variables' as *;
+
 :host {
-  .input-wrapper {
+  .input-wrap {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-  }
 
-  .input-label {
-    font-size: 14px;
-    color: var(--base-90);
-  }
-
-  .input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  .input-field {
-    width: 100%;
-    border: 1px solid var(--base-40);
-    background: var(--base-10);
-    color: var(--base-100);
-    border-radius: 6px;
-    transition: border-color 0.2s ease;
-
-    &:focus {
-      border-color: var(--accent-80);
-      outline: none;
+    .input-label {
+      color: var(--base-90);
     }
 
-    &:disabled {
-      background: var(--base-20);
-      cursor: not-allowed;
+    .input-container {
+      width: 100%;
+      display: grid;
+      grid-template-rows: max-content;
+      align-items: center;
+      border: 1px solid var(--base-40);
+      background: var(--base-10);
+      border-radius: 6px;
+      // transition: border-color 0.2s ease;
+
+      &:focus-within {
+        border-color: var(--accent-80);
+      }
+
+      .input-field {
+        width: 100%;
+        color: var(--base-100);
+        background: none;
+        border: none;
+        outline: none;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+
+      .input-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--base-80);
+      }
+    }
+
+    .left-icon {
+      grid-template-columns: max-content auto;
+    }
+
+    .right-icon {
+      grid-template-columns: auto max-content;
+    }
+
+    .left-right-icon {
+      grid-template-columns: max-content auto max-content;
+    }
+
+    .errors-wrap {
+      width: 100%;
+      min-width: 16px;
+
+      .input-error {
+        min-height: 16px;
+        display: flex;
+        align-items: center;
+        color: var(--error-80);
+      }
     }
   }
 
-  .input-icon {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--base-80);
-
-    &.left {
-      left: 10px;
-    }
-
-    &.right {
-      right: 10px;
-    }
+  .input-disabled {
+    opacity: 0.8;
+    pointer-events: none;
   }
 
   /* Sizes */
-  .input--sm .input-field {
-    padding: 4px 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-    font-size: 14px;
+  .input--sm {
+    gap: 4px;
+
+    .input-label {
+      font-size: 12px;
+    }
+
+    .input-container {
+      padding: 4px 8px;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .input-icon {
+      i {
+        font-size: 12px;
+      }
+    }
+
+    .input-error {
+      font-size: 10px;
+    }
   }
 
-  .input--sm .input-icon {
-    i {
+  .input--md {
+    gap: 6px;
+
+    .input-label {
+      font-size: 14px;
+    }
+
+    .input-container {
+      padding: 6px 10px;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    .input-icon {
+      i {
+        font-size: 14px;
+      }
+    }
+
+    .input-error {
       font-size: 12px;
     }
   }
 
-  .input--md .input-field {
-    padding: 6px 10px;
-    padding-left: 36px;
-    padding-right: 36px;
-    font-size: 16px;
-  }
+  .input--lg {
+    gap: 8px;
 
-  .input--md .input-icon {
-    i {
+    .input-label {
+      font-size: 16px;
+    }
+
+    .input-container {
+      padding: 10px 14px;
+      gap: 12px;
+      font-size: 18px;
+    }
+
+    .input-icon {
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .input-error {
       font-size: 14px;
     }
   }
 
-  .input--lg .input-field {
-    padding: 10px 14px;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 18px;
-  }
+  @media (max-width: $max-mobile) {
+    .input--md {
+      gap: 4px;
 
-  .input--lg .input-icon {
-    i {
-      font-size: 16px;
+      .input-label {
+        font-size: 12px;
+      }
+
+      .input-container {
+        padding: 4px 8px;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .input-icon {
+        i {
+          font-size: 12px;
+        }
+      }
+
+      .input-error {
+        font-size: 10px;
+      }
+    }
+
+    .input--lg {
+      gap: 6px;
+
+      .input-label {
+        font-size: 14px;
+      }
+
+      .input-container {
+        padding: 6px 10px;
+        gap: 10px;
+        font-size: 16px;
+      }
+
+      .input-icon {
+        i {
+          font-size: 14px;
+        }
+      }
+
+      .input-error {
+        font-size: 12px;
+      }
     }
   }
 
-  .input-error {
-    color: var(--error-80);
-    font-size: 13px;
+  .input-enter {
+    animation: show-error forwards 0.3s;
+  }
+
+  .input-leave {
+    animation: show-error reverse forwards 0.3s;
+  }
+
+  @keyframes show-error {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 }

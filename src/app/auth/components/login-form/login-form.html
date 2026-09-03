@@ -3,19 +3,33 @@
 
   <app-input
     label="Email"
-    placeholder="Enter email"
-    [value]="email()"
-    (valueChange)="email.set($event)"
-    (focus)="onFocus()"
+    valueType="email"
+    [value]="loginModel().email"
+    [errors]="
+      loginForm
+        .email()
+        .errors()
+        .map((el) => el.message ?? '')
+        .filter((el) => el)
+    "
+    (valueChange)="loginModel.update((v) => ({ ...v, email: $event }))"
+    (onFocus)="handleFocus()"
   ></app-input>
 
   <app-input
     label="Password"
-    placeholder="Enter password"
-    type="password"
-    [value]="password()"
-    (valueChange)="password.set($event)"
-    (focus)="onFocus()"
+    valueType="password"
+    [value]="loginModel().password"
+    [maxErrorCount]="4"
+    [errors]="
+      loginForm
+        .password()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((el) => el)
+    "
+    (valueChange)="loginModel.update((v) => ({ ...v, password: $event }))"
+    (onFocus)="handleFocus()"
   ></app-input>
 
   @if (error()) {
@@ -27,7 +41,7 @@
     <app-button
       text="Login"
       size="md"
-      [disabled]="loading()"
+      [disabled]="loading() || loginForm().invalid()"
       color="accent"
       (click)="submit()"
     ></app-button>

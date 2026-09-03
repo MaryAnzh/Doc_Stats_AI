@@ -10,7 +10,7 @@ const meta: Meta<InputComponent> = {
     value: { control: 'text' },
     placeholder: { control: 'text' },
     label: { control: 'text' },
-    error: { control: 'text' },
+    errors: { control: 'text' },
     iconLeft: { control: 'select', options: [SEARCH, PLUS] }, // bootstrap icon name
     iconRight: { control: 'select', options: [SAVE, CLOCK, CALENDAR] }, // bootstrap icon name
     size: { control: 'select', options: [SM, MD, LG] },
@@ -45,7 +45,7 @@ export const WithError: Story = {
   args: {
     label: 'Email',
     placeholder: 'Enter email',
-    error: 'Invalid email format',
+    errors: ['Invalid email format'],
     size: MD,
   },
 };

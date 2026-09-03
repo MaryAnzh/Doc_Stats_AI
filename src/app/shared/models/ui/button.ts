@@ -3,7 +3,6 @@ import {
   COMPONENT_RADIUS,
   COMPONENT_WIDTH,
   COMPONENTS_SIZE,
-  ICON_NAMES,
 } from '../../constants';
 import { KeysTemplateType } from '../common';
 

@@ -3,13 +3,17 @@
   flex-direction: column;
   gap: var(--padding-lg);
   width: 100%;
-  max-width: 520px;
   justify-content: center;
   padding: var(--padding-md);
   background-color: var(--base-10);
   border-radius: var(--br-md);
   border: 1px solid var(--base-40);
   box-shadow: var(--box-shadow);
+  overflow: hidden;
+
+  @media (min-width: 532px) {
+    width: 500px;
+  }
 
   .auth_btn_wrap {
     width: 100%;

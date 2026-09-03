@@ -4,3 +4,6 @@ export type KeysTemplateType<T extends Record<string, string>> = T[keyof T];
 
 export type AppRoutesType = KeysTemplateType<typeof APP_ROUTES>;
 export type IconNameType = KeysTemplateType<typeof ICON_NAMES>;
+
+export type ErrorMessageType = { message: string; id: string };
+export type ErrorsMassageArrType = ErrorMessageType[];

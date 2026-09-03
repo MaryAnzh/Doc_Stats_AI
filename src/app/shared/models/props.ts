@@ -1,4 +1,3 @@
-import { COMPONENTS_SIZE, DEFAULT_SIZE, ICON_NAMES } from '../constants';
-import { KeysTemplateType } from './common';
+import { COMPONENTS_SIZE, DEFAULT_SIZE } from '../constants';
 
 export type LogoSize = typeof DEFAULT_SIZE | typeof COMPONENTS_SIZE.SM;
