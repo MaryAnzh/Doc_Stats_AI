@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, model, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, model, output, signal } from '@angular/core';
 import { INPUT_TYPES, MD } from '../../constants';
 import * as T from '../../models';
 import { TypographyDirective } from '../../directive/typography';
@@ -25,12 +25,21 @@ export class InputComponent {
   readonly valueType = input<T.InputValueType>(INPUT_TYPES.TEXT);
   readonly disabled = input<boolean>(false);
   readonly onFocus = output<void>();
+  readonly onBlur = output<void>();
+
+  readonly showErrors = signal(false);
 
   handleChangeValue(value: string) {
     this.value.update(() => value);
   }
 
   handleFocus() {
+    this.showErrors.set(true);
     this.onFocus.emit();
+  }
+
+  handleBlur() {
+    this.showErrors.set(false);
+    this.onBlur.emit();
   }
 }

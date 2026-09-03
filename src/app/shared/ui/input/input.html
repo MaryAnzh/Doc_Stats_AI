@@ -27,6 +27,7 @@
       [type]="valueType()"
       (input)="handleChangeValue($event.target.value)"
       (focus)="handleFocus()"
+      (blur)="handleBlur()"
     />
 
     @if (iconRight()) {
@@ -37,16 +38,18 @@
   </div>
 
   <div class="errors-wrap" [style]="{ height: 16 * maxErrorCount() + 'px' }">
-    @for (err of errors(); track $index) {
-      <p
-        class="input-error"
-        animate.enter="input-enter"
-        animate.leave="input-leave"
-        appTypography
-        variant="descriptionXXSMedium"
-      >
-        {{ err }}
-      </p>
+    @if (showErrors()) {
+      @for (err of errors(); track $index) {
+        <p
+          class="input-error"
+          animate.enter="input-enter"
+          animate.leave="input-leave"
+          appTypography
+          variant="descriptionXXSMedium"
+        >
+          {{ err }}
+        </p>
+      }
     }
   </div>
 </div>

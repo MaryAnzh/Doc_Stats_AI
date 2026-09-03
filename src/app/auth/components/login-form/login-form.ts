@@ -30,19 +30,7 @@ export class LoginFormComponent {
     required(schemaPath.password, { message: 'Password is required' });
     minLength(schemaPath.password, 8, { message: 'Minimum 8 characters' });
     maxLength(schemaPath.password, 32, { message: 'Maximum 32 characters' });
-    pattern(schemaPath.password, /[A-Za-z]/, {
-      message: 'Password must contain at least one Latin letter',
-    });
-    pattern(schemaPath.password, /\d/, {
-      message: 'Password must contain at least one digit',
-    });
-    pattern(schemaPath.password, /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/, {
-      message: 'Password must contain at least one special symbol',
-    });
   });
-  constructor() {
-    console.log(this.loginForm().errors());
-  }
 
   handleFocus() {
     this.store.clearError();

@@ -4,23 +4,49 @@
   <app-input
     label="Name"
     placeholder="Your name"
-    [value]="name()"
-    (valueChange)="name.set($event)"
+    [value]="registerModel().name"
+    [errors]="
+      registerForm
+        .name()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((e) => e)
+    "
+    (valueChange)="registerModel.update((v) => ({ ...v, name: $event }))"
+    (onFocus)="handleFocus()"
   ></app-input>
 
   <app-input
     label="Email"
     placeholder="Enter email"
-    [value]="email()"
-    (valueChange)="email.set($event)"
+    valueType="email"
+    [value]="registerModel().email"
+    [errors]="
+      registerForm
+        .email()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((e) => e)
+    "
+    (valueChange)="registerModel.update((v) => ({ ...v, email: $event }))"
+    (onFocus)="handleFocus()"
   ></app-input>
 
   <app-input
     label="Password"
     placeholder="Enter password"
-    type="password"
-    [value]="password()"
-    (valueChange)="password.set($event)"
+    valueType="password"
+    [value]="registerModel().password"
+    [maxErrorCount]="4"
+    [errors]="
+      registerForm
+        .password()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((e) => e)
+    "
+    (valueChange)="registerModel.update((v) => ({ ...v, password: $event }))"
+    (onFocus)="handleFocus()"
   ></app-input>
 
   @if (error()) {
@@ -28,14 +54,16 @@
       {{ error() }}
     </div>
   }
+
   <div class="auth_btn_wrap">
     <app-button
       text="Register"
       size="md"
-      [disabled]="loading()"
       color="accent"
+      [disabled]="loading() || registerForm().invalid()"
       (click)="submit()"
     ></app-button>
+
     <app-button text="Go to Login" size="md" color="ghost" navTo="auth/login"></app-button>
   </div>
 </div>
