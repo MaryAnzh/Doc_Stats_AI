@@ -1,1 +1,69 @@
-<div></div>
+<div class="auth_form">
+  <h2 appTypography="headingLMedium">Register</h2>
+
+  <app-input
+    label="Name"
+    placeholder="Your name"
+    [value]="registerModel().name"
+    [errors]="
+      registerForm
+        .name()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((e) => e)
+    "
+    (valueChange)="registerModel.update((v) => ({ ...v, name: $event }))"
+    (onFocus)="handleFocus()"
+  ></app-input>
+
+  <app-input
+    label="Email"
+    placeholder="Enter email"
+    valueType="email"
+    [value]="registerModel().email"
+    [errors]="
+      registerForm
+        .email()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((e) => e)
+    "
+    (valueChange)="registerModel.update((v) => ({ ...v, email: $event }))"
+    (onFocus)="handleFocus()"
+  ></app-input>
+
+  <app-input
+    label="Password"
+    placeholder="Enter password"
+    valueType="password"
+    [value]="registerModel().password"
+    [maxErrorCount]="4"
+    [errors]="
+      registerForm
+        .password()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((e) => e)
+    "
+    (valueChange)="registerModel.update((v) => ({ ...v, password: $event }))"
+    (onFocus)="handleFocus()"
+  ></app-input>
+
+  @if (error()) {
+    <div class="auth_error" appTypography="bodySRegular">
+      {{ error() }}
+    </div>
+  }
+
+  <div class="auth_btn_wrap">
+    <app-button
+      text="Register"
+      size="md"
+      color="accent"
+      [disabled]="loading() || registerForm().invalid()"
+      (click)="submit()"
+    ></app-button>
+
+    <app-button text="Go to Login" size="md" color="ghost" navTo="auth/login"></app-button>
+  </div>
+</div>

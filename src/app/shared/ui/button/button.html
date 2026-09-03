@@ -2,7 +2,7 @@
   class="btn"
   [class]="`btn--${size()} btn--${color()} btn--${radius()} btn--w-${width()}`"
   [disabled]="disabled()"
-  (click)="onClick()"
+  (click)="handleClick()"
 >
   @if (imgSrc()) {
     <img class="btn-img" [src]="imgSrc()" alt="icon" />

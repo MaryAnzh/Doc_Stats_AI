@@ -1,11 +1,21 @@
-<div class="input-wrapper" [class]="`input--${size()}`">
+@let isLeftIcon = iconLeft();
+@let isRightIcon = iconRight();
+
+<div class="input-wrap" [class]="`input--${size()} ${disabled() ? 'input-disabled' : ''}`">
   @if (label()) {
     <label class="input-label">{{ label() }}</label>
   }
 
-  <div class="input-container">
+  <div
+    class="input-container"
+    [class]="{
+      'left-icon': isLeftIcon && !isRightIcon,
+      'right-icon': isRightIcon && !isLeftIcon,
+      'left-right-icon': isLeftIcon && isRightIcon,
+    }"
+  >
     @if (iconLeft()) {
-      <span class="input-icon left">
+      <span class="input-icon">
         <i class="bi" [class]="'bi-' + iconLeft()"></i>
       </span>
     }
@@ -13,19 +23,33 @@
     <input
       class="input-field"
       [placeholder]="placeholder()"
-      [disabled]="disabled()"
       [value]="value()"
-      (input)="onChangeValue($event.target.value)"
+      [type]="valueType()"
+      (input)="handleChangeValue($event.target.value)"
+      (focus)="handleFocus()"
+      (blur)="handleBlur()"
     />
 
     @if (iconRight()) {
-      <span class="input-icon right">
+      <span class="input-icon">
         <i class="bi" [class]="'bi-' + iconRight()"></i>
       </span>
     }
   </div>
 
-  @if (error()) {
-    <div class="input-error">{{ error() }}</div>
-  }
+  <div class="errors-wrap" [style]="{ height: 16 * maxErrorCount() + 'px' }">
+    @if (showErrors()) {
+      @for (err of errors(); track $index) {
+        <p
+          class="input-error"
+          animate.enter="input-enter"
+          animate.leave="input-leave"
+          appTypography
+          variant="descriptionXXSMedium"
+        >
+          {{ err }}
+        </p>
+      }
+    }
+  </div>
 </div>

@@ -1,4 +1,4 @@
-export const TYPOGRAPHY_STYLES: TypographyViewType = {
+export const TYPOGRAPHY_STYLES = {
   headingXXL: {
     size: '59px',
     lineHeight: '120%',

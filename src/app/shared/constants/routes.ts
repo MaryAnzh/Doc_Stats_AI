@@ -3,13 +3,15 @@ export const ROUTES = {
   LOGIN: 'login',
   REGISTER: 'register',
   REFRESH: 'refresh',
-  ME: 'me',
+  ME: 'current-user',
   LOGOUT: 'logout',
   DASHBOARD: 'dashboard',
 } as const;
 export const { AUTH, LOGIN, REGISTER, REFRESH, ME, LOGOUT, DASHBOARD } = ROUTES;
 
-export const FULL_ROUTES = {
-  AUTH_LOGIN: `/${AUTH}/${LOGIN}`,
-  AUTH_REGISTER: `/${AUTH}/${REGISTER}`,
-};
+export const APP_ROUTES = {
+  AUTH_LOGIN: `${AUTH}/${LOGIN}`,
+  AUTH_REGISTER: `${AUTH}/${REGISTER}`,
+  DASHBOARD: '',
+  NOT_FOUND: 'not-found',
+} as const;

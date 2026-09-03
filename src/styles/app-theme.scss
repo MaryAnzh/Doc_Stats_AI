@@ -24,18 +24,18 @@
   --accent-60: #7d97f1;
 
   /* success */
-  --success-100: #53d258;
-  --success-80: #75db79;
-  --success-60: #98e49b;
-  --success-40: #baebc0;
-  --success-20: #ddf6de;
+  --success-100: #3ac94a;
+  --success-80: #63d66c;
+  --success-60: #8ae48f;
+  --success-40: #b6f0c0;
+  --success-20: #e1f9e8;
 
-  /* error */
-  --error-100: #e25c5c;
-  --error-80: #eb7d7d;
-  --error-60: #ee999d;
-  --error-40: #f3bebe;
-  --error-20: #f9dede;
+  /* error — light theme */
+  --error-100: #d64545;
+  --error-80: #e36a6a;
+  --error-60: #ee8f8f;
+  --error-40: #f5bcbc;
+  --error-20: #fce3e3;
 
   /* ui */
   --background: var(--base-100);
@@ -43,9 +43,12 @@
   --surface-variant: var(--base-80);
   --text-primary: var(--base-100);
   --text-secondary: var(--base-80);
+
   --icon-color: var(--base-80);
   --icon-color-hover: var(--base-100);
   --icon-color-active: var(--base-60);
+
+  --box-shadow: 0px 1px 3.9px 0px rgba(113, 113, 113, 0.25);
 
   /* Sizes */
   --br-lg: 16px;
@@ -75,16 +78,16 @@
   --base-0: #020307;
 
   /* success */
-  --success-100: #7bef80;
-  --success-80: #9af5a0;
-  --success-60: #b8f8bd;
-  --success-40: #d6fbe0;
-  --success-20: #ecfff0;
+  -success-100: #1baf43;
+  --success-80: #4edc6f;
+  --success-60: #7ae98f;
+  --success-40: #b2f5c7;
+  --success-20: #e3fce9;
 
   /* error */
-  --error-100: #ff7a7a;
-  --error-80: #ff9a9a;
-  --error-60: #ffb8b8;
-  --error-40: #ffdada;
-  --error-20: #fff0f0;
+  --error-100: #ff5f5f;
+  --error-80: #ff7f7f;
+  --error-60: #ff9e9e;
+  --error-40: #ffc2c2;
+  --error-20: #ffe5e5;
 }

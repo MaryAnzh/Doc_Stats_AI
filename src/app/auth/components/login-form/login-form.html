@@ -1,0 +1,50 @@
+<div class="auth_form">
+  <h2 appTypography="headingMMedium">Login</h2>
+
+  <app-input
+    label="Email"
+    valueType="email"
+    [value]="loginModel().email"
+    [errors]="
+      loginForm
+        .email()
+        .errors()
+        .map((el) => el.message ?? '')
+        .filter((el) => el)
+    "
+    (valueChange)="loginModel.update((v) => ({ ...v, email: $event }))"
+    (onFocus)="handleFocus()"
+  ></app-input>
+
+  <app-input
+    label="Password"
+    valueType="password"
+    [value]="loginModel().password"
+    [maxErrorCount]="2"
+    [errors]="
+      loginForm
+        .password()
+        .errors()
+        ?.map((e) => e.message ?? '')
+        .filter((el) => el)
+    "
+    (valueChange)="loginModel.update((v) => ({ ...v, password: $event }))"
+    (onFocus)="handleFocus()"
+  ></app-input>
+
+  @if (error()) {
+    <div class="auth_error" appTypography="bodySRegular">
+      {{ error() }}
+    </div>
+  }
+  <div class="auth_btn_wrap">
+    <app-button
+      text="Login"
+      size="md"
+      [disabled]="loading() || loginForm().invalid()"
+      color="accent"
+      (click)="submit()"
+    ></app-button>
+    <app-button text="Go to Register" size="md" color="ghost" navTo="auth/register"></app-button>
+  </div>
+</div>
