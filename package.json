@@ -14,7 +14,7 @@
     "format": "prettier --write",
     "sb": "ng run docstatsai-frontend:storybook",
     "build-sb": "ng run docstatsai-frontend:build-storybook",
-    "deploy-sb": "gh-pages -d storybook-static"
+    "deploy-sb": "echo '# nojekyll' > storybook-static/.nojekyll && gh-pages -d storybook-static --dotfiles"
   },
   "prettier": {
     "printWidth": 100,
