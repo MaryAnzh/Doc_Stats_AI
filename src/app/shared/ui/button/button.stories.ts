@@ -1,6 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/angular-vite';
-import { ButtonComponent } from './button';
+import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular-vite';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+
 import * as C from '../../constants';
+import { ButtonComponent } from './button';
+
 const { SEARCH, SAVE, ARROW_DOWN, ARROW_RIGHT, ARROW_LEFT, CALENDAR, CLOCK } = C.ICON_NAMES;
 
 const meta: Meta<ButtonComponent> = {
@@ -46,6 +49,23 @@ const meta: Meta<ButtonComponent> = {
       control: 'select',
       options: ['assets/webP/google.webP'],
     },
+  },
+  decorators: [
+    applicationConfig({
+      providers: [
+        { provide: RouterLink, useValue: () => {} },
+        { provide: ActivatedRoute, useValue: {} },
+      ],
+    }),
+  ],
+};
+
+export const Default: Story = {
+  args: {
+    text: 'Default',
+    color: C.BASE,
+    size: C.MD,
+    iconLeft: SEARCH,
   },
 };
 
