@@ -1,5 +1,5 @@
 import { Meta, StoryObj, applicationConfig } from '@storybook/angular-vite';
-import { provideRouter } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { LogoComponent } from './logo';
 import { SM, DEFAULT_SIZE as DEFAULT } from '../../constants';
@@ -9,7 +9,10 @@ const meta: Meta<LogoComponent> = {
   component: LogoComponent,
   decorators: [
     applicationConfig({
-      providers: [provideRouter([])],
+      providers: [
+        { provide: RouterLink, useValue: () => {} },
+        { provide: ActivatedRoute, useValue: () => {} },
+      ],
     }),
   ],
   argTypes: {

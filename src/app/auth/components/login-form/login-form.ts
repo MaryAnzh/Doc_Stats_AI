@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
-import { email, form, maxLength, minLength, pattern, required } from '@angular/forms/signals';
+import { email, form, maxLength, minLength, required } from '@angular/forms/signals';
 
 import { AuthStore } from '../../store/auth-store';
 import { InputComponent, ButtonComponent } from '../../../shared/ui';

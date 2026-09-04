@@ -25,7 +25,7 @@ const config: StorybookConfig = {
   },
   core: {},
   viteFinal: async (config) => {
-    config.base = '/Doc_Stats_AI/';
+    config.base = './';
     return config;
   },
 };

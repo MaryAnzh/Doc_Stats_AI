@@ -1,13 +1,16 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular-vite';
 import { HeaderComponent } from './header';
-import { provideRouter } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 const meta: Meta<HeaderComponent> = {
   title: 'Layout/Header',
   component: HeaderComponent,
   decorators: [
     applicationConfig({
-      providers: [provideRouter([])],
+      providers: [
+        { provide: RouterLink, useValue: () => {} },
+        { provide: ActivatedRoute, useValue: {} },
+      ],
     }),
   ],
   parameters: {
