@@ -1,5 +1,88 @@
 @use '../../../../styles/variables' as *;
 
+/* ---------- SIZE MAP ---------- */
+$btn-sizes: (
+  xsm: (
+    height: 20px,
+    padding: 4px 8px,
+    gap: 4px,
+    radius: 4px,
+    font-size: 8px,
+    line-height: 10px,
+    img-size: 10px,
+    icon-size: 6px,
+  ),
+
+  sm: (
+    height: 24px,
+    padding: 6px 10px,
+    gap: 4px,
+    radius: 6px,
+    font-size: 10px,
+    line-height: 12px,
+    img-size: 12px,
+    icon-size: 8px,
+  ),
+
+  md: (
+    height: 32px,
+    padding: 8px 16px,
+    gap: 6px,
+    radius: 8px,
+    font-size: 12px,
+    line-height: 14px,
+    img-size: 16px,
+    icon-size: 12px,
+  ),
+
+  lg: (
+    height: 40px,
+    padding: 10px 16px,
+    gap: 6px,
+    radius: 12px,
+    font-size: 14px,
+    line-height: 20px,
+    img-size: 20px,
+    icon-size: 16px,
+  ),
+);
+
+/* ---------- MIXINS ---------- */
+@mixin btn-size($height, $padding, $gap, $radius, $font-size, $line-height, $img-size, $icon-size) {
+  height: $height;
+  padding: $padding;
+  gap: $gap;
+  border-radius: $radius;
+  font-size: $font-size;
+  line-height: $line-height;
+
+  .btn-img {
+    width: $img-size;
+    height: $img-size;
+  }
+
+  i.bi {
+    &::before {
+      font-size: $icon-size;
+    }
+  }
+}
+
+@mixin btn-size-map($key) {
+  $map: map-get($btn-sizes, $key);
+
+  @include btn-size(
+    map-get($map, height),
+    map-get($map, padding),
+    map-get($map, gap),
+    map-get($map, radius),
+    map-get($map, font-size),
+    map-get($map, line-height),
+    map-get($map, img-size),
+    map-get($map, icon-size)
+  );
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -21,101 +104,29 @@
 
   /* ---------- SIZES ---------- */
   &.btn--sm {
-    height: 24px;
-    padding: 6px 10px;
-    gap: 4px;
-    border-radius: 6px;
-    font-size: 10px;
-    line-height: 12px;
-
-    .btn-img {
-      width: 12px;
-      height: 12px;
-    }
-
-    i.bi {
-      &::before {
-        font-size: 8px;
-      }
-    }
+    @include btn-size-map(sm);
   }
 
   &.btn--md {
-    height: 32px;
-    padding: 8px 16px;
-    gap: 6px;
-    border-radius: 8px;
-    font-size: 12px;
-    line-height: 14px;
-
-    .btn-img {
-      width: 16px;
-      height: 16px;
-    }
-
-    i.bi {
-      &::before {
-        font-size: 12px;
-      }
-    }
+    @include btn-size-map(md);
   }
 
   &.btn--lg {
-    height: 40px;
-    padding: 10px 16px;
-    gap: 6px;
-    border-radius: 12px;
-    font-size: 14px;
-    line-height: 20px;
-
-    .btn-img {
-      width: 20px;
-      height: 20px;
-    }
-
-    i.bi {
-      &::before {
-        font-size: 16px;
-      }
-    }
+    @include btn-size-map(lg);
   }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: $max-mobile) {
     &.btn--lg {
-      height: 32px;
-      padding: 8px 16px;
-      gap: 6px;
-      border-radius: 8px;
-      font-size: 12px;
-      line-height: 14px;
-
-      .btn-img {
-        width: 16px;
-        height: 16px;
-      }
-
-      i.bi {
-        font-size: 16px;
-      }
+      @include btn-size-map(md);
     }
 
     &.btn--md {
-      height: 24px;
-      padding: 6px 10px;
-      gap: 4px;
-      border-radius: 6px;
-      font-size: 10px;
-      line-height: 12px;
+      @include btn-size-map(sm);
+    }
 
-      .btn-img {
-        width: 12px;
-        height: 12px;
-      }
-
-      i.bi {
-        font-size: 12px;
-      }
+    &.btn--sm {
+      @include btn-size-map(xsm);
     }
   }
 
